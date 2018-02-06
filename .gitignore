@@ -1,3 +1,5 @@
 docs/Overview.rst
 _build
 *.bak
+docs/Configure CORS .txt
+docs/Edge DS Docker Images.rst
