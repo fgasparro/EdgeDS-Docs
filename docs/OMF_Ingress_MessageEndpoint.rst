@@ -1,6 +1,8 @@
 OMF API
 =======
 
+**REDO FOR EDGE** 
+
 Because OMF messages contain all of the information needed to process them, there is a single 
 endpoing for ingestion of OMF data into OSIsoft Cloud Services. 
 
