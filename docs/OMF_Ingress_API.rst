@@ -4,11 +4,9 @@ OMF Ingress API
 ===============
 
 
-The API calls in the following sections are used to manage publishers, topics, subscriptions, and security for ingestion of OSIsoft Message Format (OMF) messages into OSIsoft Cloud Services (OCS). 
+The API Calls in this section are used to get data into Edge DS. 
 
 .. toctree::
-   OMF_Ingress_MessageEndpoint.rst
-   OMF_Ingress_Publishers.rst
-   OMF_Ingress_Topics.rst
-   OMF_Ingress_Subscriptions.rst
-
+    OMF_Ingress_Specification.rst
+	OMF_Ingress_intro.rst
+	OMF_Ingress_MessageEndpoint.rst

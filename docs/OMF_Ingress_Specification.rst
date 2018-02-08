@@ -1,17 +1,17 @@
-Using OMF with Cloud Services
+Using OMF with Edge Data Store
 =============================
 
 The OMF specification (located `here <http://omf-docs.osisoft.com>`_) is generic in that it does
 not specify a particular back-end system. This topic is a companion to the OMF specification which describes how
-OMF is interpreted by OSIsoft Cloud Services back-end system. 
+OMF is interpreted by OSIsoft Edge Data Store.  
 
 Headers
 -------
 
 A description of each of the headers can be found in the `OMF spec <http://omf-docs.osisoft.com>`_. When 
-sending messages to OSIsoft Cloud Services, the value of the ``producertoken`` header must be 
-set to a security token obtained from the OCS Portal. The security token is used to authenticate 
-the sender and to authorize the sender for use with a particular Tenant and Publisher.
+sending messages to Edge DS, the value of the ``producertoken`` header must be 
+set to a security token obtained from the Edge DS. The security token is used to authenticate 
+the sender and to authorize the sender for use with a particular Edge DS.
 
 Message Types
 -------------
@@ -42,16 +42,16 @@ OMF message types fall into three categories: Type, Container, and Data, which a
 
 * **Link Type**
 
-  Link Types are not supported in OCS Data Store.
+  Link Types are not supported in Edge Data Store.
 
 * **Span Type**
 
-  Span Types are not supported in OCS Data Store.
+  Span Types are not supported in Edge Data Store.
   
 * **Property Types and Formats**
 
   OMF supports setting the ``format`` keyword to specify how a particular JSON type should 
-  be interpreted. The following is a mapping for the OCS Data Store supported 
+  be interpreted. The following is a mapping for the Edge Data Store supported 
   types (see `QiType information <http://qi-docs.osisoft.com/en/latest/Qi_Types.html>`_)
 
 
@@ -78,7 +78,7 @@ string    date-time    DateTime
 Container messages
 ------------------
 
-A Container message is interpreted as a QiStream in the OCS Data Store. The keywords 
+A Container message is interpreted as a QiStream in the Edge Data Store. The keywords 
 in the Container definition are interpreted as follows:
 
 * ``id``: Corresponds to the QiStream Id field. It must conform to the rules defined for 
@@ -94,7 +94,7 @@ in the Container definition are interpreted as follows:
 Data messages
 -------------
 
-A Data message is mapped to generic Qi values in the OCS Data Store. The keywords in the 
+A Data message is mapped to generic Qi values in the Edge Data Store. The keywords in the 
 Data definitions are interpreted as follows:
 
 * ``typeid``: Data that is not grouped by containerId is not supported.
