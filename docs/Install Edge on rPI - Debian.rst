@@ -1,9 +1,14 @@
+**************
+Install EdgeDS on rPI
+***********************
 
+..contents::
 
 The purpose of this document is to install Edge DS on Debian 9 on RPI. These
 instructions also apply to Ubuntu.
 
-*Prerequisites*
+Prerequisites
+**************
 
 1.  Install Libunwind8 this is available as a package
 
@@ -26,8 +31,8 @@ instructions also apply to Ubuntu.
 
     2.  Go to \\Linux-arm
 
-*Install Edge DS bits on Debian 9 for rPI*
-
+Installation
+**************
 1.  Copy EdgeDataServerInstall_Linux-arm.tar.gz to the Linux device \>/Download
 
 2.  Extract EdgeDataServerInstall_Linux-arm.tar.gz to /Download

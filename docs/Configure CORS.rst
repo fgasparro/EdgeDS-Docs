@@ -1,4 +1,6 @@
-** Configure Edge DS Cross-Origin Resource Sharing (CORS)**
+***********************************************************
+Configure Edge DS Cross-Origin Resource Sharing (CORS)
+***********************************************************
 
 In some scenarios, you may have issues accessing the Edge Data Store from a browser based script due to the "Same Origin Policy" security feature in most modern browsers.
 

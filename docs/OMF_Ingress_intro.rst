@@ -1,4 +1,4 @@
-Data ingress to Edge DS using OMF
+Data Ingress
 ========================================
 
 You can use OSIsoft Message Format (OMF) to achieve high-throughput asynchronous data ingress 
@@ -8,6 +8,6 @@ in this and subsequent topics:
 DEFINE terms FOR EDGE DS
 
 .. toctree::
-    OMF_Ingress_Specification.rst
-	OMF_Ingress_intro.rst
-	OMF_Ingress_MessageEndpoint.rst
+   OMF_Ingress_Specification
+   OMF_Ingress_MessageEndpoint
+  

@@ -1,6 +1,12 @@
-:_Edge DS Admin
+**************
+Edge DS Admin
+**************
+.. contents:: Topics in this section: 
 
-EdgeDS has an admin webpage located at 
+Edge Admin
+***********
+
+EdgeDS has an admin webpage located at: 
 
 Https://localhost:5000
 

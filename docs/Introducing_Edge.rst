@@ -1,8 +1,8 @@
 .. _Introducing_Edge DS_topic:
 
-==============
-Introducing Edge Data Store (Edge DS)
-==============
+*************************
+What is Edge Data Store
+*************************
 
 .. contents:: Topics in this section:
     :depth: 3

@@ -7,6 +7,6 @@ OMF Ingress API
 The API Calls in this section are used to get data into Edge DS. 
 
 .. toctree::
-    OMF_Ingress_Specification.rst
-	OMF_Ingress_intro.rst
-	OMF_Ingress_MessageEndpoint.rst
+   OMF_Ingress_Specification
+   OMF_Ingress_intro
+   OMF_Ingress_MessageEndpoint
