@@ -29,6 +29,7 @@ using Edge Data Store.
    Writing_Data
    Searching
    Filter Expressions
+   EdgeSecurity
    samples
    OMF_Ingress_intro
    
