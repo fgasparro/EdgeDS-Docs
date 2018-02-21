@@ -2,7 +2,7 @@
 Security  
 ***************
 
-The information in this section describes the security features that you might have to interact 
+The information in this section describes the security features you might be required to interact 
 with as a user of the Edge Data Store platform. 
 
 Two basic methods are available for interacting with the system:
@@ -27,7 +27,7 @@ Interactive mode security
 
 Currently, the interactive Edge administration site (which contains the *Home*, *View*, *Egress* pages) is password 
 protected. You are prompted to provide a username and password the first time you access a page in a session. The Edge 
-administration site is generally found at: *https://localhost:5000/*
+administration site is generally found at: ``https://localhost:5000/``
 
 The username and password for the site are fixed; they currently cannot be changed or removed. The username and password are:
 
@@ -36,8 +36,8 @@ The username and password for the site are fixed; they currently cannot be chang
 
 Note that the password is case sensitive.
 
-After you are logged in, you will not be prompted again unless your session ends. The session will end after 
-15 minutes of inactivity, or if you exit the browser.
+After you are logged in, you will not be prompted for credentials again unless your session ends. The session ends after 
+15 minutes of inactivity or if you exit the browser.
 
 The exchange of the credentials is protected in transit over the network by HTTPS.
 
@@ -52,8 +52,8 @@ is sent to the service. If the token key and value are not present a 401 (Unauth
 
 The token key and value are fixed; they currently cannot be changed. They are:
 
-*  key: producertoken
-*  value: LzBzgY1zPnxQ55TX6O4WEcj2i1lfL47fDQM57ectmmDjShQvIsQCbMKbKh4i7be
+*  key: ``producertoken``
+*  value: ``LzBzgY1zPnxQ55TX6O4WEcj2i1lfL47fDQM57ectmmDjShQvIsQCbMKbKh4i7be``
 
 Note that the OMF specification requires that the key be present. The key name shown above was chosen because the Edge Data 
 Store supports OMF. For the sake of simplicity, regardless of the API, you must use the key and value shown above.
