@@ -143,4 +143,8 @@ With the derived DelegatingHandler, every API call made by the library will have
 Other languages or technologies have other implementation-specific ways to set HTTP request headers. See the documentation 
 relevant to your implementation for more details.
 
+.. toctree::
 
+   Edge_CORS
+   Edge_Cert_Mgmt
+   
