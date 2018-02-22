@@ -32,7 +32,7 @@ administration site is generally found at: ``https://localhost:5000/``
 The username and password for the site are fixed; they currently cannot be changed or removed. The username and password are:
 
 * username: ``edgeadmin``
-* password: --do we want this in here?--
+* password: <to be provided> 
 
 Note that the password is case sensitive.
 
