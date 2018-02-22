@@ -25,7 +25,7 @@ problems coding in the broswer environment, see the "Notes on Cross-Origin Resou
 Interactive mode security
 -------------------------
 
-Currently, the interactive Edge administration site (which contains the *Home*, *View*, *Egress* pages) is password 
+Currently, the interactive Edge administration site (which contains the *Home*, *View*, and *Egress* pages among others) is password 
 protected. You are prompted to provide a username and password the first time you access a page in a session. The Edge 
 administration site is generally found at: ``https://localhost:5000/``
 
