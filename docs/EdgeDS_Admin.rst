@@ -1,21 +1,28 @@
-**************
-Edge DS Admin
-**************
+******************************
+Edge Data Store Administration
+******************************
+
 .. contents:: Topics in this section: 
 
-Edge Admin
-***********
 
-EdgeDS has an admin webpage located at: 
+After running the installation program on the edge device, you can view the Edge administration pages using a browser.
+The Edge Data Store administration web page is located here: 
 
-Https://localhost:5000
+``https://localhost:5000``
+
+The administration web page resembles the following:
+
+.. image:: images/Edge_Admin_Home.png
+
 
 Home
-*****
-The functions on the home page are as follows:
+****
 
-Start Data Server - The program is running but the Data Server inside the program can be started. 
-Stop Data Server - The program is running but the Data Server inside the program can be stopped.
+The available options are as follows:
+
+**Start Data Server** - The program is running but the Data Server inside the program can be started. 
+
+**Stop Data Server** - The program is running but the Data Server inside the program can be stopped.
 
 Data Server Parameters
 Changing these settings requires stopping the data server and restarting the .exe or service (CTP1 limitation) 
