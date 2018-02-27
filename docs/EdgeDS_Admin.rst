@@ -41,6 +41,16 @@ Data Server Store
   
   When finished making changes, click **Submit**.
 
+
+View page
+*********
+
+The view tool is available to help end users confirm that data is stored in their Edge Data Store. You must select a
+start and end time to return data. It might help to select a future end time so that current data is displayed.  
+
+Any data present in the data store is displayed in the **Stream Data** window.
+
+
 Egress page
 ***********
 
@@ -65,14 +75,6 @@ OCS Egress
   Enter the Endpoint address for OCS and your producer token and select **Submit**. To finish, click **Start the OCS Egress**.  
 
 
-View page
-*********
-
-The view tool is available to help end users confirm that data is stored in their Edge Data Store. You must select a
-start and end time to return data. It might help to select a future end time so that current data is displayed.  
-
-Any data present in the data store is displayed in the **Stream Data** window.
-
 Clear page
 **********
 
@@ -89,6 +91,11 @@ Reset configuration
   Use this option to return the Data store to a base configuration. The reset requires that the data server be stopped.
   Using this option removes all Egress settings and purges all the stream and stream configuration data from the data store. 
 
+
+Registration page
+*****************
+
+Use the Resistration page to register your information with OSIsoft.
 
 
 Administration API page
