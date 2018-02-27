@@ -54,11 +54,12 @@ Any data present in the data store is displayed in the **Stream Data** window.
 Egress page
 ***********
 
-Edge Data Server supports two endpoints for exporting data (known as "egress"); one endpoint if for PI Connector 
-Relay and one for OSIsoft Cloud Services. 
+Edge Data Server supports two endpoints for data egress (exporting data); one endpoint is for sending data to a PI Connector 
+Relay and one is for sending data to OSIsoft Cloud Services. 
 
-You cannot send data to both a PI system and OSIsoft Cloud Services (OCS) at the same time. There are no options for 
-backfilling or for any type of historical data replay. 
+Note
+  You cannot send data to both a PI system and OSIsoft Cloud Services (OCS) at the same time. There are no options for 
+  backfilling or for any type of historical data replay. 
 
 In this version CTP1, if Egress is configured, as data flows into the data store it is immediately sent to the 
 running Egress endpoint.  
