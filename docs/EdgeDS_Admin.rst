@@ -96,7 +96,12 @@ Reset configuration
 Registration page
 *****************
 
-Use the Resistration page to register your information with OSIsoft.
+For quality purposes, OSIsoft collects certain limited information about your Edge data store account. OSIsoft collects 
+registration information and log data (such as exceptions and debugging information), while other data, such as 
+QiTypes, QiStreams and Qi data, are not sent to OSIsoft and remains private.
+
+Fill in the information on the Resistration page to register your information with OSIsoft. This informatin is required for
+CTP.
 
 
 Administration API page
