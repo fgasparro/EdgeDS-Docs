@@ -2,6 +2,7 @@
 
 
 
+
 Installation
 *******************************
 
@@ -60,11 +61,11 @@ Linux installation
 Follow the instrunctions in this section to install Edge Data Store on Windows computers. 
 
 1) Download the tar file from OSIsoft.
-2) Navigate to the directory in which the tar file was downloaded and enter the following command:
+2) Navigate to the directory in which the tar file was downloaded and enter the following command   
 
-   ``tar -xvf EdgeDataServerInstall.tar``
+  ``tar -xvf EdgeDataServerInstall.tar``
    
-   You can also specify a directory in which to install:
+  You can also specify a directory in which to install:
    
    ``tar -xvf EdgeDataServerInstall.tar -C *your directory*``
 
@@ -76,5 +77,44 @@ Follow the instrunctions in this section to install Edge Data Store from a Docke
 
 1) Ensure that Docker is installed on your computer and that it is started and enabled.
 2) ??? 
+
+
+
+Restarting Edge services
+------------------------
+
+Occassionally, it might be necessary to restart the Edge services. 
+
+**Windows**
+
+1. From the Start menu, open the *Control Panel*. 
+2. Select *Administrative Tools*. 
+3. From the Administrative Tools window, open Services. 
+4. Select the service and then click Restart. 
+
+
+
+**Linux**
+
+1. Open a Linux command terminal.
+2. Enter the following command to obtain a list of running services:
+
+  ``ls /etc/init.d``
+     or
+  ``ls /etc/rc.d/``
+
+3. Find the name of the service you want to restart.
+4. Enter the following command:
+
+   ``sudo systemctl restart`` *service* 
+   
+   where *service* is the service name to restart.
+   
+5. Enter your password.
+
+
+
+
+
 
 
