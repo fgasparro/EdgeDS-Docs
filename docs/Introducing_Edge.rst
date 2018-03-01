@@ -62,7 +62,7 @@ Preview for both product support and to provide feedback to the Edge team:
 
 `EdgeDSSupport@osisoft.com <mailto://EdgeDSSupport@osisoft.com>`__
 
-To provide feedback about Edge Data Store please go to' <https://feedback.osisoft.com/forums/906877-edge>
+To provide feedback about Edge Data Store please go to: https://feedback.osisoft.com/forums/906877-edge
 
 The OSIsoft team will respond to all support requests as
 quickly as possible during business hours (Pacific Time).
