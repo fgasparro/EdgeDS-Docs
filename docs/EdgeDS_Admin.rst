@@ -71,6 +71,9 @@ PI Egress
   After your settings are saved, you must select **start PI Egress**. In CTP1, the Edge Data Store only sends simple 
   types to PI Connectors. The type must have a primary index of time stamp. 
 
+  Note that memory and disk usage might rise considerably when using the data egress feature. See :ref:'Edge_Install_topic'
+
+
 OCS Egress
   To send data to OCS you must obtain a cloud services account and configure cloud services to accept data. 
   Enter the Endpoint address for OCS and your producer token and select **Submit**. To finish, click **Start the OCS Egress**.  
