@@ -3,8 +3,7 @@ How to Pull the Edge Data Server Docker Image
 
 The Edge Data Server Docker image is stored in the Azure Container Registry. Pulling the Edge Data Server Docker image
 is relatively straightforward; however, the Azure CLI tools are required in order to log in. Instructions
-for downloading the Azure CLI tools are available here:
-https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest.
+for downloading the Azure CLI tools are available `here <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>`_ 
 
 Generally, end users will not install the Azure CLI tools on their Internet of things (IOT) devices. An easy way
 to install a minimal-footprint Docker image on an IOT device is to download the image to an intermediate
