@@ -23,7 +23,7 @@ Edge Data Store System Requirements
 * Historian files (128 MB required)
 * Historical storage - TBD
 
-**Supported operating dystems**
+**Supported operating systems**
 
 * Ubuntu 16.04
 * Windows 10, 2016 
@@ -42,7 +42,7 @@ Other than the packages listed above, the platform-specific Edge Data Store pack
 Windows installation
 --------------------
 
-Follow the instrunctions in this section to install Edge Data Store on Microsoft Windows computers. 
+Follow the instructions in this section to install Edge Data Store on Microsoft Windows computers. 
 
 1) Download the Windows msi file from OSIsoft.
 2) Use Windows Explorer to navigate to the location where the msi file was downloaded, then double-click the file.
@@ -56,7 +56,7 @@ Follow the instrunctions in this section to install Edge Data Store on Microsoft
 Linux installation
 ------------------
 
-Follow the instrunctions in this section to install Edge Data Store on Windows computers. 
+Follow the instructions in this section to install Edge Data Store on Windows computers. 
 
 1) Download the tar file from OSIsoft.
 2) Navigate to the directory in which the tar file was downloaded and enter the following command   
@@ -83,7 +83,7 @@ for more information.
 Restarting Edge services
 ------------------------
 
-Occassionally, it might be necessary to restart the Edge services. 
+Occasionally, it might be necessary to restart the Edge services. 
 
 **Windows**
 
@@ -116,12 +116,23 @@ Occassionally, it might be necessary to restart the Edge services.
 Edge Certificates
 -----------------
 
-For the Edge data store to work correctly with your browser, you must have a sercurity certificate. 
+For the Edge data store to work correctly with your browser, you must have two security certificates: a machine 
+certificate and a root certificate. The machine certificate permits localhost access, while the root certificate 
+provides access to the Edge application.
 
-OSIsoft provides a certificate for testing purposes; your IT department probably has its own guidlines and 
-procedures for certificate authorities. The certificate is only valid for the *localhost* host. Follow the steps on 
-this page to install the OSIsoft certificate.
+OSIsoft provides a certificate for testing purposes; your IT department probably has its own guidelines and 
+procedures for managing digital certificates. You should use the digital certificates recommended by your IT 
+department.
 
+The steps on this page describe how to install the OSIsoft certificate, which
+installs the root certificate into a trusted location, which in turn allows the machine certificate to be 
+validated by the browser.
+
+Note: Some browsers, such as Mozilla Firefox, do not use the certificate store provided by the operating
+system; instead, they use their own. You should search for documentation that is applicable to your browser and your 
+operating environment.
+
+**For Microsoft Windows systems:**
 
 1. Use Windows Explorer to locate the certificate in the following directory:
 
@@ -129,7 +140,7 @@ this page to install the OSIsoft certificate.
 
 2. Double click the certificate file.
 
-   Double clicking the file imports it into the certicate store and the Certificate window displays.
+   Double clicking the file imports it into the certificate store and the Certificate window displays.
 3. Click ``Install Certificate``.
 
    The Certificate Import Wizard window displays.
@@ -146,6 +157,8 @@ this page to install the OSIsoft certificate.
    A window displays indicating the import was successful. Click ``OK``.
 8. Close and then restart your browser (if necessary) for the changes to take effect.
 
+
+**For Linux systems**
 
 
 
