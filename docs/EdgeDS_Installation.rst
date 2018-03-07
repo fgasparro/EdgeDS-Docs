@@ -116,17 +116,15 @@ Occasionally, it might be necessary to restart the Edge services.
 Edge Certificates
 -----------------
 
-For the Edge data store to work correctly with your browser, you must have two security certificates: a machine 
-certificate and a root certificate. The machine certificate permits localhost access, while the root certificate 
-provides access to the Edge application.
+For the Edge data store to work correctly with your browser, you must have two security certificates installed: a machine 
+certificate, which permits localhost access, and a root certificate, which permits access to the Edge application.
 
 OSIsoft provides a certificate for testing purposes; your IT department probably has its own guidelines and 
 procedures for managing digital certificates. You should use the digital certificates recommended by your IT 
 department.
 
-The steps on this page describe how to install the OSIsoft certificate, which
-installs the root certificate into a trusted location, which in turn allows the machine certificate to be 
-validated by the browser.
+The instructions on this page show how to install the OSIsoft root certificate into a trusted location, which in 
+turn allows the machine certificate to be validated by the browser.
 
 Note: Some browsers, such as Mozilla Firefox, do not use the certificate store provided by the operating
 system; instead, they use their own. You should search for documentation that is applicable to your browser and your 
@@ -160,7 +158,7 @@ operating environment.
 
 **For Linux systems**
 
-
+*Need instructions
 
 
 
