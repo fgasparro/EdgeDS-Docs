@@ -158,7 +158,20 @@ operating environment.
 
 **For Linux systems**
 
-*Need instructions
+1. On your Linux system, copy the security certificate file to the certificates folder:
+
+::
+
+  sudo cp EdgeRootCert.cer /etc/ssl/certs
+  
+2. Create a symbolic link for the certificate ``EdgeRootCert.cer`` 
+   This step will also refresh the symbolic links for the rest of the certificates in the folder:
+
+::
+
+  sudo c_rehash /etc/ssl/certs
+  
+After the OSIsoft root certificate is installed, the software on your system will recognise it.
 
 
 
