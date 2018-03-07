@@ -76,6 +76,9 @@ Follow the instructions in this section to install Edge Data Store from a Docker
 You install the Docker image by pulling it from the Azure Container Registry. See :ref:`Edge_Install_topic`
 for more information.
 
+.. toctree::
+   Edge_Docker_Inst
+
 
 Restarting Edge services
 ------------------------
@@ -112,7 +115,6 @@ Occassionally, it might be necessary to restart the Edge services.
 
 
 
-.. toctree::
-   Edge_Docker_Inst
+
 
 
