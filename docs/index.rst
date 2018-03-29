@@ -20,6 +20,7 @@ using Edge Data Store.
    EdgeDS_Installation
    Quick_Start
    EdgeDS_Admin
+   Edge_Egress
    Qi_Namespaces
    Qi_Types
    Qi_Streams
