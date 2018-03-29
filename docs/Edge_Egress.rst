@@ -29,4 +29,8 @@ Egress feature of Edge Data Store, create an instance of ``IQiEdgeEgressService`
   var egressService = edgeServer.GetEgressService();
 
 
+.. toctree::
+
+    Edge_Egress_cfg
+    Edge_Egress_Rules
 
