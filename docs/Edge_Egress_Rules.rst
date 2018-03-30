@@ -33,8 +33,7 @@ the ``CreateRuleAsync`` method, as shown here:
 •	``Description`` is a description for the EgressRule
 •	``StreamFilterId`` is a regex for the Id of the stream to filter.
 •	``StreamFilterTypeId`` is a regex the type of the stream to filter.
-•	``EventFilter`` is a filter expression that dictates what events can be egressed. For assistance writing 
-    filter expressions for the EventFilter property, consult OCS documentation: http://qi-docs.readthedocs.io/en/latest/Filter%20Expressions.html
+•	``EventFilter`` is a filter expression that dictates what events can be egressed. For assistance writing filter expressions for the EventFilter property, consult OCS documentation: http://qi-docs.readthedocs.io/en/latest/Filter%20Expressions.html
     
 Creating a new EgressRule
 -------------------------
