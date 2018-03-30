@@ -19,8 +19,7 @@ Use the ``CreateTargetAsync`` method to add a new EgressTarget to an Edge Data S
 
 •	``targetId`` is a unique id you assign to this EgressTarget instance
 •	``description`` is a meaningful description for this EgressTarget instance
-•	``targetType`` must be a value of the ``Models.OmfEgress.EgressTarget.EgressTargetType`` enum specifying what 
-    the destination product is (either OCS or PI)
+•	``targetType`` must be a value of the ``Models.OmfEgress.EgressTarget.EgressTargetType`` enum specifying what the destination product is (either OCS or PI)
 
 Starting the egress for an existing EgressTarget
 ------------------------------------------------
