@@ -17,7 +17,7 @@ the ``CreateRuleAsync`` method, as shown here:
 
 ::
 
-  Instantiating an EgressRule
+  // Instantiating an EgressRule
   var rule = new EgressRule()
   {
       Id = "EgressTankTemperatureData",
