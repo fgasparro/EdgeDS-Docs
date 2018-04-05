@@ -94,25 +94,6 @@ Occasionally, it might be necessary to restart the Edge services.
 
 
 
-**Linux**
-
-1. Open a Linux command terminal.
-2. Enter the following command to obtain a list of running services:
-
-  ``ls /etc/init.d``
-     or
-  ``ls /etc/rc.d/``
-
-3. Find the name of the service you want to restart.
-4. Enter the following command:
-
-   ``sudo systemctl restart`` *service* 
-   
-   where *service* is the service name to restart.
-   
-5. Enter your password.
-
-
 Edge Certificates
 -----------------
 
