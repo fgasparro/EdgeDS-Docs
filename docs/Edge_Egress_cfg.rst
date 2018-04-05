@@ -70,15 +70,17 @@ To delete an existing EgressTarget, use the DeleteTargetAsync method, as shown h
 Updating an existing EgressTarget
 ---------------------------------
 
-To update an existing EgressTarget, use the ``UpdateRuleAsync`` method:
+To update an existing EgressTarget, use the ``UpdateTargetAsync`` method:
 
 ::
 
-  egressService.UpdateRuleAsync(targetId, ruleId, updatedRule);
+  egressService.UpdateTargetAsync(targetId, newTargetId, newDescription);
 
-•	``targetId`` is a unique id you assign to this EgressTarget instance
-•	``ruleId`` is a unique id you assigned to this existing EgressRule instance
-•	``updatedRule`` must be a value of the OSIsoft.Data.Edge.Models.Egress.EgressRules class specifying what the new rule is
+*	``targetId`` is the Id of the existing EgressTarget instance
+*	``newTargetId`` is a new Id to assign to the EgressTarget
+*	``newDescription`` is a new description for the EgressTarget
+
+
 
 Retrieving list of existing EgressTargets
 -----------------------------------------
