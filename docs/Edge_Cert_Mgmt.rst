@@ -63,32 +63,33 @@ the application binaries that is used. The exact embedded certificate used depen
 application was built.
 
 1. Placeholder Certificate
- The Edge Historian Server Visual Studio project has a certificate embedded in the project as a resource.
- This certificate was issued once and should remain unchanged until it expires on 9/29/2019. This
- certificate is intended to be used only in development; in other words, when building and running on a
- developer's machine. This certificate has a subject alternative names of localhost, 127.0.0.1, and ::1,
- and was issued (signed) by our CA certificate.
+
+   The Edge Historian Server Visual Studio project has a certificate embedded in the project as a resource.
+   This certificate was issued once and should remain unchanged until it expires on 9/29/2019. This
+   certificate is intended to be used only in development; in other words, when building and running on a
+   developer's machine. This certificate has a subject alternative names of localhost, 127.0.0.1, and ::1,
+   and was issued (signed) by our CA certificate.
 
 2. Release Certificate
- The automated build process which runs in Visual Studio Online generates a server certificate with
- each build and replaces the embedded resource that exists in the Visual Studio project. This certificate
- expires two years after the build date. Besides the expiration date (and the common name), this
- certificate is identical to the placeholder certificate. The reason this certificate is issued is because
- we'd like newly built packages to have a full two years before expiration, rather than two years from the
- date the single placeholder certificate was issued.
+   The automated build process which runs in Visual Studio Online generates a server certificate with 
+   each build and replaces the embedded resource that exists in the Visual Studio project. This certificate
+   expires two years after the build date. Besides the expiration date (and the common name), this
+   certificate is identical to the placeholder certificate. The reason this certificate is issued is because
+   we'd like newly built packages to have a full two years before expiration, rather than two years from the
+   date the single placeholder certificate was issued.
 
- In both cases above, the CA certificate needs to be trusted by any client application wanting to
- communicate with the historian. To do that, the user of the client application needs to take our ca.cert.crt
- or ca.cert.pem (not the .pfx or the .key.pem) file and add it to the trusted root certificate authorities store.
- This file is located in source control at $/OSIsoft.Data.Edge.Server/Certificates/ca.cert.crt.
+   In both cases above, the CA certificate needs to be trusted by any client application wanting to
+   communicate with the historian. To do that, the user of the client application needs to take our ca.cert.crt
+   or ca.cert.pem (not the .pfx or the .key.pem) file and add it to the trusted root certificate authorities store.
+   This file is located in source control at $/OSIsoft.Data.Edge.Server/Certificates/ca.cert.crt.
 
- Additionally, in both cases above, because we have no knowledge of a user's network topology or machine
- naming conventions, we have no way of adding the historian's hostname to the certificate. Therefore,
- only local client applications will properly validate the server certificate. In order to use a remote
- hostname, a user-supplied certificate needs to be provided.
+   Additionally, in both cases above, because we have no knowledge of a user's network topology or machine
+   naming conventions, we have no way of adding the historian's hostname to the certificate. Therefore,
+   only local client applications will properly validate the server certificate. In order to use a remote
+   hostname, a user-supplied certificate needs to be provided.
 
- In the case where the certificate is user-supplied, the CA issuing that certificate should be trusted. This
- could be a user-supplied self-signed CA certificate, or a certificate issued by a well-known CA.
+   In the case where the certificate is user-supplied, the CA issuing that certificate should be trusted. This
+   could be a user-supplied self-signed CA certificate, or a certificate issued by a well-known CA.
 
 Creating Certificates
 ---------------------
