@@ -1,7 +1,7 @@
 Edge Certificates
 =================
 
-For the Edge data store to work correctly with your browser, you must have a sercurity certificate. 
+For the Edge data store to work correctly with your browser, you must have a security certificate. 
 
 OSIsoft provides a certificate for testing purposes; your IT department probably has its own guidlines and 
 procedures for certificate authorities. The certificate is only valid for the *localhost* host. Follow the steps on 
