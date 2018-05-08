@@ -4,10 +4,9 @@ How to Pull the Edge Data Server Docker Image
 =============================================
 
 The Edge Data Server Docker image is stored in the Azure Container Registry. Pulling the Edge Data Server Docker image
-is relatively straightforward; however, the Azure CLI tools are required in order to log in. Instructions
-for downloading the Azure CLI tools are available `here <https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest>`_ 
+is relatively straightforward. 
 
-Generally, end users will not install the Azure CLI tools on their Internet of things (IOT) devices. An easy way
+An easy way
 to install a minimal-footprint Docker image on an IOT device is to download the image to an intermediate
 PC, export the image from the PC, copy the export to the device, and import the image to Docker on the device. The
 intermediate PC can pull either the x64 or the ARM image; the architecture of the image is not required to match the
@@ -16,17 +15,13 @@ architecture of the PC as long as no attempt is made to run a mismatched image o
 Logging In
 ----------
 
-First, install the Azure CLI tools using the instructions on the Microsoft web site shown above. Next, log in to the
-Container Registry using the following command:
+Log in to the Container Registry using the following command:
 
 ::
 
-  az acr login --name edgedev --username <username> --password <password>
+  docker login --username <username> --password <password> edgedev.azurecr.io
 
-The account provided to you is a read-only account that allows access to the Docker registry that stores the Edge
-Data Server Docker images. After the command is run, you are authenticated to use the ``docker pull`` command to pull
-the desired image to your local Docker installation. Because the Azure CLI takes over the login function, a 
-``docker login`` command is not required.
+
 
 Pulling the Image
 -----------------
