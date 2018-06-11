@@ -28,6 +28,7 @@ using Edge Data Store.
    Reading_Data
    Writing_Data
    Filter Expressions
+   table_format
    EdgeSecurity
    samples
    OMF_Ingress_intro
