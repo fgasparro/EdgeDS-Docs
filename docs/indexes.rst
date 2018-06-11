@@ -1,4 +1,5 @@
-.. _Qi_Indexes_topic:
+.. _Indexes_topic:
+
 =======
 Indexes
 =======
@@ -6,19 +7,19 @@ Indexes
 Indexes speed up and order the results of searches. A key uniquely identifies a record within 
 a collection of records. Keys are unique within the collection.
 
-In Qi, the key of a QiType is also an index. The key is often referred to as the *primary index,* 
+In Sds, the key of an SdsType is also an index. The key is often referred to as the *primary index,* 
 while all other indexes are referred to as *secondary indexes* or *secondaries*.
 
-A QiType that is used to define a QiStream must specify a key. When inserting data into a QiStream, every 
-key value must be unique. Qi will not store more than a single event for a given key; an event with 
+An SdsType that is used to define an SdsStream must specify a key. When inserting data into an SdsStream, every 
+key value must be unique. Sds will not store more than a single event for a given key; an event with 
 a particular key may be deleted or updated, but two events with the same key cannot exist.
 
-In .NET, the QiType properties that define the key are identified using an ``OSIsoft.Qi.QiMemberAttribute`` 
+In .NET, the SdsType properties that define the key are identified using an ``OSIsoft.Sds.SdsMemberAttribute`` 
 and setting its ``IsKey`` field to true. If the key consists of only a single property it is permissible to 
-use the ``System.ComponentModel.DataAnnotations.KeyAttribute``. In the QiType, the Property or Properties 
-representing the key have their ``QiTypeProperty.IsKey`` field set to true.
+use the ``System.ComponentModel.DataAnnotations.KeyAttribute``. In the SdsType, the Property or Properties 
+representing the key have their ``SdsTypeProperty.IsKey`` field set to true.
 
-Secondary indexes are defined on QiStreams and are applied to a single property. You can define many 
+Secondary indexes are defined on SdsStreams and are applied to a single property. You can define many 
 secondary indexes. Secondary index values need not be unique.
 
 
@@ -26,21 +27,22 @@ secondary indexes. Secondary index values need not be unique.
 Compound Indexes
 ----------------
 
-Often, a single property (such as a DateTime), is adequate for defining an Index; however, 
-for more complex scenarios Qi allows multiple properties to be defined. Indexes defined by 
-multiple properties are *compound indexes*.
+Often, a single property (such as a DateTime), is adequate for defining an index; however, for more complex 
+scenarios, Sds allows you to define multiple properties. Indexes defined by multiple properties are known as *compound indexes*.
 
-When defining a compound index in .NET, you should apply the ``OSIsoft.Qi.QiMemberAttribute`` 
-on each of the type’s properties that are combined to define the index. Set the ``IsKey`` property 
-to true and give the ``Order`` field a zero-based index value. The Order field defines the 
-precedence of the property when sorting. A property with an order of 0 has highest precedence. 
+When defining a compound index in .NET, you should apply the ``OSIsoft.Sds.SdsMemberAttribute`` on each of the type’s 
+properties that are combined to define the index. Set the ``IsKey`` property to ``true`` and give ``Orderfield`` a 
+zero-based index value. The ``Order`` field defines the precedence of the property when sorting. A property with 
+an order of 0 has highest precedence.
 
-When defining compound indexes outside of .NET, specify the IsKey and Order fields on the 
-``QiTypeProperty`` or Properties. 
+When defining compound indexes outside of .NET, specify the ``IsKey`` and ``Order`` fields on the ``SdsTypePropertyor``
+Properties.
 
 Only the primary index (or key) supports compound indexes.
 
-The Qi REST API methods that use tuples were created to assist you when using compound indexes.
+You can specify a maximum of three Properties to define a compound index.
+
+The Sds REST API methods that use tuples were created to assist you when using compound indexes.
 
 
 Working with Indexes
@@ -53,10 +55,10 @@ Using .NET
 Simple Indexes
 --------------
 
-When working in .NET, use the QiTypeBuilder together with either the ``OSIsoft.Qi.QiMemberAttribute`` or the
+When working in .NET, use the SdsTypeBuilder together with either the ``OSIsoft.Sds.SdsMemberAttribute`` or the
 ``System.ComponentModel.DataAnnotations.KeyAttribute`` to identify the Property that defines the simple Key. 
-The ``QiMemberAttribute`` is preferred. Using QiTypeBuilder eliminates potential errors that might occur 
-when working with QiTypes manually.
+The ``SdsMemberAttribute`` is preferred. Using SdsTypeBuilder eliminates potential errors that might occur 
+when working with SdsTypes manually.
 
 
 ::
@@ -70,13 +72,13 @@ when working with QiTypes manually.
 
   public class Simple
   {
-    [QiMember(IsKey = true, Order = 0) ]
+    [SdsMember(IsKey = true, Order = 0) ]
     public DateTime Time { get; set; }
     public State State { get; set; }
     public Double Measurement { get; set; }
   }
 
-  QiType simpleType = QiTypeBuilder.CreateQiType<Simple>();
+  SdsType simpleType = SdsTypeBuilder.CreateSdsType<Simple>();
 
 
 To read data that is located between two indexes, ordered by the Key, define both a start index and 
@@ -91,27 +93,27 @@ and query as follows.
   "2010-01-01T08:00:00.000Z","2010-02-01T08:00:00.000Z");
 
 
-More information about querying data can be found in `Reading Data <https://qi-docs.readthedocs.org/en/latest/Reading_Data.html>`__.
+More information about querying data can be found in :ref:`Qi_Reading_data_topic`.
 
 
 **Secondary Indexes**
 
-Secondary indexes are defined at the QiStream. To add indexes to a QiStream, you add them to the QiStream’s Indexes field.
+Secondary indexes are defined at the SdsStream. To add indexes to an SdsStream, you add them to the SdsStream’s Indexes field.
 
 For example, to add a second index on Measurement, use the following code:
 
 
 ::
 
-  QiStreamIndex measurementIndex = new QiStreamIndex()
+  SdsStreamIndex measurementIndex = new SdsStreamIndex()
   {
-      QiTypePropertyId = simpleType.Properties.First(p => p.Id.Equals("Measurement")).Id
+      SdsTypePropertyId = simpleType.Properties.First(p => p.Id.Equals("Measurement")).Id
   };
-  QiStream secondary = new QiStream()
+  SdsStream secondary = new SdsStream()
   {
       Id = "Simple with Secondary",
       TypeId = simpleType.Id,
-      Indexes = new List<QiStreamIndex>()
+      Indexes = new List<SdsStreamIndex>()
       {
           measurementIndex
       }
@@ -188,13 +190,13 @@ To read data indexed by a secondary Index, use a filtered Get, as in the followi
 Compound Indexes
 ----------------
 
-Compound indexes are defined using the QiMemberAttribute as follows:
+Compound indexes are defined using the SdsMemberAttribute as follows:
 
 ::
 
   public class Simple
   {
-    [QiMember(IsKey = true, Order = 0)]
+    [SdsMember(IsKey = true, Order = 0)]
     public DateTime Time { get; set; }
     public State State { get; set; }
     public Double Measurement { get; set; }
@@ -202,7 +204,7 @@ Compound indexes are defined using the QiMemberAttribute as follows:
 
   public class DerivedCompoundIndex : Simple
   {
-    [QiMember(IsKey = true, Order = 1)]
+    [SdsMember(IsKey = true, Order = 1)]
     public DateTime Recorded { get; set; } 
   }
 
@@ -348,14 +350,14 @@ Simple Indexes
 --------------
 
 
-When the .NET QiTypeBuilder is unavailable, indexes must be built manually.
+When the .NET SdsTypeBuilder is unavailable, indexes must be built manually.
 
 
 The following discusses the types defined in the `Python <https://github.com/osisoft/Qi-Samples/tree/master/Basic/Python>`__
 and `Java Script <https://github.com/osisoft/Qi-Samples/tree/master/Basic/JavaScript>`__
 samples. Samples in other languages can be found `here <https://github.com/osisoft/Qi-Samples/tree/master/Basic>`__.
 
-To build a QiType representation of the following sample class, see code_example_1_:
+To build a SdsType representation of the following sample class, see code_example_1_:
 
 *Python*
 
@@ -405,7 +407,7 @@ To build a QiType representation of the following sample class, see code_example
 
 .. _code_example_1:
 
-The following code is used to build a QiType representation of the sample class above:
+The following code is used to build an SdsType representation of the sample class above:
 
 *Python*
 
@@ -414,50 +416,50 @@ The following code is used to build a QiType representation of the sample class 
   # Create the properties
 
   # Time is the primary key
-  time = QiTypeProperty()
+  time = SdsTypeProperty()
   time.Id = "Time"
   time.Name = "Time"
   time.IsKey = True
-  time.QiType = QiType()
-  time.QiType.Id = "DateTime"
-  time.QiType.Name = "DateTime"
-  time.QiType.QiTypeCode = QiTypeCode.DateTime
+  time.SdsType = SdsType()
+  time.SdsType.Id = "DateTime"
+  time.SdsType.Name = "DateTime"
+  time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-  # State is not a pre-defined type. A QiType must be defined to represent the enum
-  stateTypePropertyOk = QiTypeProperty()
+  # State is not a pre-defined type. An SdsType must be defined to represent the enum
+  stateTypePropertyOk = SdsTypeProperty()
   stateTypePropertyOk.Id = "Ok"
   stateTypePropertyOk.Measurement = State.Ok
-  stateTypePropertyWarning = QiTypeProperty()
+  stateTypePropertyWarning = SdsTypeProperty()
   stateTypePropertyWarning.Id = "Warning"
   stateTypePropertyWarning.Measurement = State.Warning
-  stateTypePropertyAlarm = QiTypeProperty()
+  stateTypePropertyAlarm = SdsTypeProperty()
   stateTypePropertyAlarm.Id = "Alarm"
   stateTypePropertyAlarm.Measurement = State.Alarm
 
-  stateType = QiType()
+  stateType = SdsType()
   stateType.Id = "State"
   stateType.Name = "State"
   stateType.Properties = [ stateTypePropertyOk, stateTypePropertyWarning,\
                          stateTypePropertyAlarm ]
-  state = QiTypeProperty()
+  state = SdsTypeProperty()
   state.Id = "State"
   state.Name = "State"
-  state.QiType = stateType
+  state.SdsType = stateType
 
   # Measurement property is a simple non-indexed, pre-defined type
-  measurement = QiTypeProperty()
+  measurement = SdsTypeProperty()
   measurement.Id = "Measurement"
   measurement.Name = "Measurement"
-  measurement.QiType = QiType()
-  measurement.QiType.Id = "Double"
-  measurement.QiType.Name = "Double"
+  measurement.SdsType = SdsType()
+  measurement.SdsType.Id = "Double"
+  measurement.SdsType.Name = "Double"
 
-  # Create the Simple QiType
-  simple = QiType()
+  # Create the Simple SdsType
+  simple = SdsType()
   simple.Id = str(uuid.uuid4())
   simple.Name = "Simple"
   simple.Description = "Basic sample type"
-  simple.QiTypeCode = QiTypeCode.Object
+  simple.SdsTypeCode = SdsTypeCode.Object
   simple.Properties = [ time, state, measurement ]
 
 
@@ -466,85 +468,85 @@ The following code is used to build a QiType representation of the sample class 
 .. code-block:: javascript
 
   // Time is the primary key
-  var timeProperty = new QiObjects.QiTypeProperty({
+  var timeProperty = new SdsObjects.SdsTypeProperty({
     "Id": "Time",
     "IsKey": true,
-    "QiType": new QiObjects.QiType({
+    "SdsType": new SdsObjects.SdsType({
       "Id": "dateType",
-      "QiTypeCode": QiObjects.qiTypeCodeMap.DateTime
+      "SdsTypeCode": SdsObjects.SdsTypeCodeMap.DateTime
     })
   });
 
-  // State is not a pre-defined type. A QiType must be defined to represent the enum
-  var stateTypePropertyOk = new QiObjects.QiTypeProperty({
+  // State is not a pre-defined type. A SdsType must be defined to represent the enum
+  var stateTypePropertyOk = new SdsObjects.SdsTypeProperty({
     "Id": "Ok",
     "Value": State.Ok
   });
 
-  var stateTypePropertyWarning = new QiObjects.QiTypeProperty({
+  var stateTypePropertyWarning = new SdsObjects.SdsTypeProperty({
     "Id": "Warning",
     "Value": State.Warning
   });
 
-  var stateTypePropertyAlarm = new QiObjects.QiTypeProperty({
+  var stateTypePropertyAlarm = new SdsObjects.SdsTypeProperty({
     "Id": "Alarm",
     "Value": State.Alarm
   });
 
-  var stateType = new QiObjects.QiType({
+  var stateType = new SdsObjects.SdsType({
     "Id": "State",
     "Name": "State",
-    "QiTypeCode": QiObjects.qiTypeCodeMap.Int32Enum,
+    "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Int32Enum,
     "Properties": [stateTypePropertyOk, stateTypePropertyWarning,
       stateTypePropertyAlarm, stateTypePropertyRed]
   });
 
   // Value property is a simple non-indexed, pre-defined type
-  var valueProperty = new QiObjects.QiTypeProperty({
+  var valueProperty = new SdsObjects.SdsTypeProperty({
     "Id": "Value",
-    "QiType": new QiObjects.QiType({
+    "SdsType": new SdsObjects.SdsType({
       "Id": "doubleType",
-      "QiTypeCode": QiObjects.qiTypeCodeMap.Double
+      "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Double
     })
   });
 
-  // Create the Simple QiType
-  var simpleType = new QiObjects.QiType({
+  // Create the Simple SdsType
+  var simpleType = new SdsObjects.SdsType({
     "Id": "Simple",
     "Name": "Simple",
-    "Description": "This is a simple Qi type",
-    "QiTypeCode": QiObjects.qiTypeCodeMap.Object,
+    "Description": "This is a simple Sds type",
+    "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Object,
     "Properties": [timeProperty, stateProperty, valueProperty]
   });
 
 
-The Time property is identified as the Key by define its QiTypeProperty as follows:
+The Time property is identified as the Key by define its SdsTypeProperty as follows:
 
 *Python*
 
 .. code-block:: python
 
   # Time is the primary key
-  time = QiTypeProperty()
+  time = SdsTypeProperty()
   time.Id = "Time"
   time.Name = "Time"
   time.IsKey = True
-  time.QiType = QiType()
-  time.QiType.Id = "DateTime"
-  time.QiType.Name = "DateTime"
-  time.QiType.QiTypeCode = QiTypeCode.DateTime
+  time.SdsType = SdsType()
+  time.SdsType.Id = "DateTime"
+  time.SdsType.Name = "DateTime"
+  time.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
 *JavaScript*
 
 .. code-block:: javascript
 
   // Time is the primary key
-  var timeProperty = new QiObjects.QiTypeProperty({
+  var timeProperty = new SdsObjects.SdsTypeProperty({
     "Id": "Time",
     "IsKey": true,
-    "QiType": new QiObjects.QiType({
+    "SdsType": new SdsObjects.SdsType({
       "Id": "dateType",
-      "QiTypeCode": QiObjects.qiTypeCodeMap.DateTime
+      "SdsTypeCode": SdsObjects.SdsTypeCodeMap.DateTime
     })
   });
 
@@ -557,14 +559,14 @@ ISO 8601 representation of dates and times. To query for a window of values betw
 2010 and February 1, 2010, you would define indexes as “2010-01-01T08:00:00.000Z” and 
 “2010-02-01T08:00:00.000Z”, respectively.
 
-Additional information can be found in the `Reading Data <https://qi-docs.readthedocs.org/en/latest/Reading_Data.html>`__.
+Additional information can be found in :ref:`Qi_Reading_data_topic`.
 
 **Secondary Indexes**
 
-Secondary Indexes are defined at the QiStream. To create a QiStream 
+Secondary Indexes are defined at the SdsStream. To create an SdsStream 
 using the Simple class and add a Secondary index on the Measurement, 
-you use the previously defined QiType. Then you create a QiStreamIndex 
-specifying the measurement property and define a QiStream identifying the 
+you use the previously defined SdsType. Then you create a SdsStreamIndex 
+specifying the measurement property and define a SdsStream identifying the 
 Measurement as a Secondary Index as shown in the following example:
 
 
@@ -574,10 +576,10 @@ Measurement as a Secondary Index as shown in the following example:
 
   # Create the properties
 
-  measurementIndex = QiStreamIndex()
-  measurementIndex.QiTypePropertyId = measurement.Id
+  measurementIndex = SdsStreamIndex()
+  measurementIndex.SdsTypePropertyId = measurement.Id
 
-  stream = QiStream()
+  stream = SdsStream()
   stream.Id = str(uuid.uuid4())
   stream.Name = "SimpleWithSecond"
   stream.Description = "Simple with secondary index"
@@ -590,11 +592,11 @@ Measurement as a Secondary Index as shown in the following example:
 
 .. code-block:: javascript
 
-  var measurementIndex = new QiObjects.QiStreamIndex({
-    "QiTypePropertyId": valueProperty.Id
+  var measurementIndex = new SdsObjects.SdsStreamIndex({
+    "SdsTypePropertyId": valueProperty.Id
   });
 
-  var stream = new QiObjects.QiStream({
+  var stream = new SdsObjects.SdsStream({
     "Id": "SimpleWithSecond",
     "Name": "SimpleWithSecond",
     "Description": "Simple with secondary index",
@@ -658,7 +660,7 @@ Consider the following Python and JavaScript types:
   }
 
 
-To turn the simple QiType shown in the example into a type supporting the DerivedCompoundIndex 
+To turn the simple SdsType shown in the example into a type supporting the DerivedCompoundIndex 
 type with a compound index based on the ``Simple.Time`` and ``DerivedCompoundIndex.Recorded``, 
 extend the type as follows:
 
@@ -667,23 +669,23 @@ extend the type as follows:
 .. code-block:: python
 
   # We set the Order for this property. The order of the first property defaulted to 0
-  recorded = QiTypeProperty()
+  recorded = SdsTypeProperty()
   recorded.Id = "Recorded"
   recorded.Name = "Recorded"
   recorded.IsKey = True
   recorded.Order = 1
-  recorded.QiType = QiType()
-  recorded.QiType.Id = "DateTime"
-  recorded.QiType.Name = "DateTime"
-  recorded.QiType.QiTypeCode = QiTypeCode.DateTime
+  recorded.SdsType = SdsType()
+  recorded.SdsType.Id = "DateTime"
+  recorded.SdsType.Name = "DateTime"
+  recorded.SdsType.SdsTypeCode = SdsTypeCode.DateTime
 
-  # Create the Derived QiType
-  derived = QiType()
+  # Create the Derived SdsType
+  derived = SdsType()
   derived.Id = str(uuid.uuid4())
   derived.Name = "Compound"
   derived.Description = "Derived compound index sample type"
   derived.BaseType = simple
-  derived.QiTypeCode = QiTypeCode.Object
+  derived.SdsTypeCode = SdsTypeCode.Object
   derived.Properties = [ recorded ]
 
 
@@ -693,25 +695,25 @@ extend the type as follows:
 .. code-block:: javascript
 
   // We set the Order for this property. The order of the first property defaulted to 0
-  var recordedProperty = new QiObjects.QiTypeProperty({
+  var recordedProperty = new SdsObjects.SdsTypeProperty({
     "Id": "Recorded",
     "Name": "Recorded",
     "IsKey": true,
     "Order": 1,
-    "QiType": new QiObjects.QiType({
+    "SdsType": new SdsObjects.SdsType({
       "Id": "DateTime",
       "Name": "DateTime",
-      "QiTypeCode": QiObjects.qiTypeCodeMap.DateTime
+      "SdsTypeCode": SdsObjects.SdsTypeCodeMap.DateTime
     })
   });
 
-  // Create the Derived QiType
-  var derivedType = new QiObjects.QiTyp({
+  // Create the Derived SdsType
+  var derivedType = new SdsObjects.SdsTyp({
     "Id": "Compound",
     "Name": "Compound",
     "Description": "Derived compound index sample type",
     "BaseType": simpleType,
-    "QiTypeCode": QiObjects.qiTypeCodeMap.Object,
+    "SdsTypeCode": SdsObjects.SdsTypeCodeMap.Object,
     "Properties": [recordedProperty]
   });
 

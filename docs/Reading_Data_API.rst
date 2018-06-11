@@ -9,7 +9,7 @@ Reading and writing data with the Qi Client Libraries is performed through the `
 --------------
 
 Returns the value at the specified index. If no stored event exists at the specified index, the stream’s 
-:ref:`Qi_Stream_behavior_topic` determines how the returned event is calculated.
+read characteristics determines how the returned event is calculated.
 
 
 **Request**
@@ -38,7 +38,7 @@ Returns the value at the specified index. If no stored event exists at the speci
 **Response**
 
   The response includes a status code and a response body containing a serialized event.
-  Consider a stream of type Simple with the default QiStreamBehavior Mode of Interpolation and 
+  Consider a stream of type Simple with the default InterpolationMode of Continuous and 
   ExtrapolationMode of All. In the following request, the specified index matches an existing stored event:
 
 ::
@@ -69,7 +69,7 @@ The following request specifies an index for which no stored event exists:
   api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetValue 
       ?index=2017-11-23T13:30:00Z
       
-Because the index is a valid type for interpolation and the stream behavior specifies a mode of interpolate, 
+Because the index is a valid type for interpolation and the stream type specifies a mode of interpolate, 
 this request receives a response with an event interpolated at the specified index:
       
 **Response body**
@@ -205,8 +205,8 @@ Returns the last value in the stream. If no values exist in the stream, null is 
 ---------------------
 
 Returns the value at the specified index. If no value exists at the specified index, 
-Get Distinct Value returns HTTP Status Code Not Found, 404.  The stream’s QiStreamBehavior 
-does not affect Get Distinct Value.
+Get Distinct Value returns HTTP Status Code Not Found, 404.  The stream’s read characteristics 
+do not affect Get Distinct Value.
 
 
 **Request**
@@ -248,30 +248,6 @@ The event at that index is returned in the response:
 
 ::
   
-  HTTP/1.1 200
-  Content-Type: application/json
-
-  {  
-     "Time":"2017-11-23T13:00:00Z",
-     "Measurement":10.0
-  }
-
-Note that State is not included in the JSON as its value is the default value.
-
-The following request specifies an index for which no stored event exists:
-
-::
-
-  api/Tenants/{tenantId}/Namespaces/{namespaceId}/Streams/Simple/Data/GetValue 
-      ?index=2017-11-23T13:30:00Z
-      
-Because the index is a valid type for interpolation and the stream behavior specifies a mode of interpolate, 
-this request receives a response with an event interpolated at the specified index:
-      
-**Response body**
-
-::
-
   HTTP/1.1 200
   Content-Type: application/json
 
@@ -439,7 +415,7 @@ The next event in the stream is retrieved.
 
 Returns a collection of values at indexes based on request parameters. 
 
-As with the single event call to Get Value, the stream’s type and behavior determine how events 
+As with the single event call to Get Value, the stream’s read characteristics determine how events 
 are calculated for indexes at which no stored event exists.
 
 Get Values supports three ways of specifying which events to return. 
@@ -473,7 +449,7 @@ Get Values supports three ways of specifying which events to return.
 ``string endIndex``
   The index defining the end of the range  
 ``string count``
-  The number of events to return. QiStreamBehavior determines how the form of the event.
+  The number of events to return. Read characteristics of the stream determine how the form of the event.
 ``string viewId``
   Optional view identifier
 
@@ -1306,14 +1282,12 @@ Note that State is not included in the JSON as its value is the default value.
 ``Get Intervals``
 --------------
 
-*Note: Get Intervals is exposed as a preview only. The return format and supported summaries are subject to change.*
+Returns summary intervals between a specified start and end index. 
 
-Returns summary intervals between a specified start and end index. Returns summary intervals between 
-a specified start and end index. Index types that cannot be interpolated, such as string indexes, do not 
-support GetIntervals requests.
-
-Returns summary intervals between a specified start and end index. Index types that cannot be interpolated, 
-such as string indexes, do not support GetIntervals requests.
+Index types that cannot be interpolated do not 
+support GetIntervals requests. Strings are an example of indexes that cannot be interpolated. The 
+Get Intervals method does not support compound indexes. Interpolating between two indexes 
+that consist of multiple properties is not defined and results in non-determinant behavior.
 
 Results are returned as a collection of QiIntervals. Each QiInterval has a start, end, and collection of 
 summary values.

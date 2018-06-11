@@ -1,11 +1,13 @@
-Writing Qi data
-===============
+.. _Qi_Writing_Data_topic:
 
-The Qi REST APIs provide programmatic access to read and write Qi data. This section describes 
-the APIs used to write QiStream data.
+Writing data
+============
 
-When working in .NET, convenient Qi Client libraries are available. The ``IQiDataServiceinterface``, accessed using the
-``QiService.GetDataService( )`` helper, defines the available functions.
+The Sds REST APIs provide programmatic access to read and write Sds data. This section describes 
+the APIs used to write SdsStream data.
+
+When working in .NET, convenient Sds Client libraries are available. The ``ISdsDataServiceinterface``, accessed using the
+``SdsService.GetDataService( )`` helper, defines the available functions.
 
 All writes rely on a stream’s key or primary index. Preexisting values and positioning within the stream 
 is determined exclusively by the primary index. Secondary indexes are updated, but they do not contribute 
@@ -30,7 +32,7 @@ The following support writing multiple values:
 * **Remove Window Values** removes values that fall within the window defined by the start and end primary indexes.
 
 
-The base URI for writing Qi data is:
+The base URI for writing Sds data is:
 
 ::
 
@@ -49,7 +51,7 @@ The base URI for writing Qi data is:
 Response Format
 ---------------
 
-Supported response formats include JSON, verbose JSON, and Qi. 
+Supported response formats include JSON, verbose JSON, and Sds. 
 
 The default response format for reading data is JSON, which is used in all examples in this document. 
 Default JSON responses do not include any values that are equal to the default value for their type.
@@ -59,14 +61,14 @@ To specify verbose JSON return, add the header ``Accept-Verbosity`` with a value
 
 Verbose has no impact on writes; writes return only error messages.
 
-To specify Qi format, set the ``Accept`` header in the request to ``application/qi``.
+To specify Sds format, set the ``Accept`` header in the request to ``application/Sds``.
 
 Indexes
 -------
 
-Qi writes rely on the primary index for positioning within streams and locating existing events. 
+Sds writes rely on the primary index for positioning within streams and locating existing events. 
 Most writes use the index as specified by the value. Deletes are the exception to this rule. When deleting, 
-indexes are specified as strings in the URI, or, when using the Qi Client libraries, the index may be 
+indexes are specified as strings in the URI, or, when using the Sds Client libraries, the index may be 
 passed as-is to delete methods that take the index type as a generic argument. More details about working 
 with indexes can be found on the :ref:`Qi_Indexes_topic` page. 
 
@@ -99,7 +101,7 @@ Samples use the following types:
 
   public class Simple
   {
-    [QiMember(IsKey = true, Order = 0) ] 
+    [SdsMember(IsKey = true, Order = 0) ] 
     public DateTime Time { get; set; }
     public State State { get; set; }
     public Double Measurement { get; set; }
@@ -169,7 +171,7 @@ The values produced by the above code is as follows:
 
   public class Simple
   {
-    [QiMember(IsKey = true, Order = 0)]
+    [SdsMember(IsKey = true, Order = 0)]
     public DateTime Time { get; set; }
     public State State { get; set; }
     public Double Measurement { get; set; }
@@ -177,7 +179,7 @@ The values produced by the above code is as follows:
 
   public class DerivedCompoundIndex : Simple
   {
-    [QiMember(IsKey = true, Order = 1)]
+    [SdsMember(IsKey = true, Order = 1)]
     public DateTime Recorded { get; set; }
   }
   
@@ -270,7 +272,7 @@ the insert operation fails, and returns HTTP status code Conflict, 409.
   The stream identifier
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 A sample of serialized Simple type content is shown here:
 
@@ -331,7 +333,7 @@ not an event with a matching primary index, the patch operation fails and return
   
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 A sample of serialized Simple type content is shown here:
 
@@ -389,7 +391,7 @@ matching index, the replace operation fails and returns HTTP status code Not Fou
   The stream identifier
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 A sample of serialized Simple type content is shown here:
 
@@ -448,7 +450,7 @@ a matching index, the event is inserted.
   The stream identifier
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 A sample of serialized Simple type content is shown here:
 
@@ -554,7 +556,7 @@ index as any of the values, the insert operation fails and returns HTTP status c
   The stream identifier
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 A sample of serialized Simple type content is shown here:
 
@@ -638,7 +640,7 @@ a matching index, the patch operation fails and returns HTTP status code Not Fou
   
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 To patch the State of the sample stream shown previously, a URI resembles the following:
 
@@ -719,7 +721,7 @@ matching index, the replace operation fails and returns HTTP status code Not Fou
   The stream identifier
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 
 
@@ -768,7 +770,7 @@ matching index, the events are inserted.
   The stream identifier
 
 The request content is the serialized object matching the stream type. If you are not 
-using the Qi client libraries, using JSON is recommended.
+using the Sds client libraries, using JSON is recommended.
 
 
 

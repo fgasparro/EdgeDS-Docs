@@ -1,11 +1,11 @@
-QiStream Metadata and Tags
-==========================
+Stream Metadata and Tags
+========================
 
-QiStream metadata is represented as a dictionary of string keys and associated string values. 
-It can be used to associate additional information with a stream. QiStream tags are represented 
+SdsStream metadata is represented as a dictionary of string keys and associated string values. 
+It can be used to associate additional information with a stream. SdsStream tags are represented 
 as a list of strings. Tags can be used to categorize or denote special attributes of streams. 
 
-QiStream Metadata API 
+SdsStream Metadata API 
 ---------------------
 
 ``Get stream metadata``
@@ -37,7 +37,7 @@ Returns the metadata dictionary for the specified stream.
 
 **Response body**
 
-  The metadata for the specified QiStream. 
+  The metadata for the specified SdsStream. 
 
 **Sample response body**
 
@@ -98,7 +98,7 @@ Returns the value for the specified key in the metadata dictionary of the specif
 
 **Response body**
 
-  The metadata for the specified QiStream. 
+  The metadata for the specified SdsStream. 
 
 **Sample response body**
 
@@ -212,7 +212,7 @@ Deletes the metadata for the specified stream.
 ***********************
 
 
-QiStream Tags API 
+SdsStream Tags API 
 -----------------
 
 
@@ -245,7 +245,7 @@ Returns the tag list for the specified stream.
 
 **Response body**
 
-  The tags for the specified QiStream. 
+  The tags for the specified SdsStream. 
 
 **Sample response body**
 
