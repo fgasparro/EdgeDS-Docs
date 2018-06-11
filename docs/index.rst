@@ -21,10 +21,8 @@ using Edge Data Store.
    Quick_Start
    EdgeDS_Admin
    Edge_Egress
-   Qi_Namespaces
    Qi_Types
    Qi_Streams
-   Qi_Stream_Behavior
    QiView_information
    indexes
    Reading_Data
