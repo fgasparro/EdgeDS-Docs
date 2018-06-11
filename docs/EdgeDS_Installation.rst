@@ -79,6 +79,37 @@ for more information.
 .. toctree::
    Edge_Docker_Inst
 
+Edge performance tuning
+-----------------------
+
+To improve performance, the Edge Data Server writes recent configuration and event data to an in-memory cache
+and writes the changes to permanent  storage only when required. 
+
+The Edge Data Server periodically runs a check-point routine that writes all recent configuration 
+and event data updates to permanent storage. By default, the checkpoint is performed every 30 seconds.  
+
+Certain scenarios might require adjusting the checkpoint rate to achieve your desired performance and memory footprint. 
+Perform the following steps to adjust the periodic checkpoint rate:
+
+1. Create a file named ``settings.json`` in the following folder:
+
+   * For Windows installations: ``C:\ProgramData\OSIsoft\Data.Edge\settings``
+   
+   * For Linux installations: ``/usr/share/OSIsoft/Data.Edge/settings``
+
+2. The contents of the ``settings.json`` file is a JSON document that resembles the following format:
+
+::
+
+  {
+  "CheckpointRateInSec": 30 
+  }
+
+3. Modify the original value (30 in this example), to the number of seconds you wish the periodic checkpoint to occur.
+
+4. Restart the Edge Data Server.
+
+
 
 Restarting Edge services
 ------------------------
