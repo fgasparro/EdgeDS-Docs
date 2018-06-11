@@ -27,7 +27,6 @@ using Edge Data Store.
    indexes
    Reading_Data
    Writing_Data
-   Searching
    Filter Expressions
    EdgeSecurity
    samples
