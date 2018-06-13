@@ -128,32 +128,38 @@ Occasionally, it might be necessary to restart the Edge services.
 Edge Certificates
 -----------------
 
-For the Edge data store to work correctly with your browser, you must have two security certificates installed: a machine 
-certificate, which permits localhost access, and a root certificate, which permits access to the Edge application.
-
-OSIsoft provides a certificate for testing purposes; your IT department probably has its own guidelines and 
-procedures for managing digital certificates. You should use the digital certificates recommended by your IT 
-department.
-
+In order for the default Edge data store installation to work correctly with your browser, you must have two 
+security certificates installed: a machine certificate, which permits localhost access, and a root certificate, 
+which validates the machine certificate.
+ 
+OSIsoft provides certificates for testing purposes; your IT department probably has its own guidelines and procedures 
+for managing digital certificates. You should use the digital certificates recommended by your IT department.
+ 
 The instructions on this page show how to install the OSIsoft root certificate into a trusted location, which in 
-turn allows the machine certificate to be validated by the browser.
+turn allows the machine certificate to be validated by a browser or a client application. The default machine 
+certificate (provided for testing) is already installed - note that using your own machine certificate is 
+possible, and highly recommended for production work. See xxx for details.
 
-Note: Some browsers, such as Mozilla Firefox, do not use the certificate store provided by the operating
-system; instead, they use their own. You should search for documentation that is applicable to your browser and your 
-operating environment.
+Note: Some browsers and applications (such as Mozilla Firefox or Node Red), do not use the certificate store provided 
+by the operating system; instead, they use their own. You should search for documentation that is applicable to your 
+browser and your operating environment.
+
 
 **For Microsoft Windows systems:**
 
-1. Use Windows Explorer to locate the certificate in the following directory:
+1. Use Windows Explorer to locate the certificate. If you used the default installation options, the certificate file
+   is located in the following directory:
 
-   ``***Certificate location***\EdgeRootCert.cer``
+   ``C:\Program Files\OSIsoft\EdgeHistorian\EdgeRootCert.crt``
 
-2. Double click the certificate file.
+2. Double click the certificate file (EdgeRootCert.crt).
 
    Double clicking the file imports it into the certificate store and the Certificate window displays.
+   
 3. Click ``Install Certificate``.
 
    The Certificate Import Wizard window displays.
+   
 4. Select the ``Local Machine`` radio button then click ``Next``.
 5. Select the ``Place all certificates in the following store`` radio button then click ``Browse``.
 
@@ -168,22 +174,23 @@ operating environment.
 8. Close and then restart your browser (if necessary) for the changes to take effect.
 
 
-**For Linux systems**
+**For Linux systems (Ubuntu and Debian)**
 
-1. On your Linux system, copy the security certificate file to the certificates folder:
-
-::
-
-  sudo cp EdgeRootCert.cer /etc/ssl/certs
-  
-2. Create a symbolic link for the certificate ``EdgeRootCert.cer`` 
-   This step will also refresh the symbolic links for the rest of the certificates in the folder:
+1. On your Linux system, copy the security certificate to the certificates folder:
 
 ::
 
-  sudo c_rehash /etc/ssl/certs
+  sudo cp EdgeRootCert.cer /usr/local/share/ca-certificates/
   
-After the OSIsoft root certificate is installed, the software on your system will recognise it.
+2. Run the following command: 
 
+::
 
+  sudo cp EdgeRootCert.cer /usr/local/share/ca-certificates/EdgeRootCert.cer
+  
+3: Run the following command to update the certificate authority store:
+
+::
+
+  sudo update-ca-certificates
 
