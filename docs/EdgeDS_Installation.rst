@@ -121,7 +121,7 @@ Occasionally, it might be necessary to restart the Edge services.
 1. From the Start menu, open the *Control Panel*. 
 2. Select *Administrative Tools*. 
 3. From the Administrative Tools window, open Services. 
-4. Select the service and then click Restart. 
+4. Select the ``OSIsoft Edge Historian`` service and then click ``Restart``. 
 
 
 
