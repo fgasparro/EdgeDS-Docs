@@ -158,6 +158,20 @@ You can edit the settings file and restart Edge Data Store or use the command li
 
 **For Linux systems:**
 
+To start the Edge Data Store server on a Linux system, locate the directory in which you extracted the tar file, then
+run the following command:
+
+::
+
+  sudo ./OSIsoft.Data.Edge.Server
+
+Optionally, you can specify command-line options to override the default settings. You can view the defaule settings
+with the following command:
+
+::
+
+  sudo ./OSIsoft.Data.Edge.Server --help
+
 
 
 
