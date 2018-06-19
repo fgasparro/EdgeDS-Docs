@@ -132,6 +132,11 @@ Starting the Edge Data Store
 By default, Edge Data Store runs as a service on Microsoft Windows systems. The services are started when the installation
 completes. 
 
+If you installed Edge Data Store using the default file locations, the
+executable file can be found in the following directory:
+
+``C:\Program Files\OSIsoft\EdgeDataStore\OSIsoft.Data.Edge.Server.exe``
+
 You can change certain startup parameters by starting Edge Data Store using command-line options:
 
 ::
