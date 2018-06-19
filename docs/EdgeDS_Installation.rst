@@ -121,7 +121,38 @@ Occasionally, it might be necessary to restart the Edge services.
 1. From the Start menu, open the *Control Panel*. 
 2. Select *Administrative Tools*. 
 3. From the Administrative Tools window, open Services. 
-4. Select the ``OSIsoft Edge Historian`` service and then click ``Restart``. 
+4. Select the ``OSIsoft Edge Data Store`` service and then click ``Restart``. 
+
+
+Starting the Edge Data Store
+----------------------------
+
+**For Microsoft Windows systems:**
+
+By default, Edge Data Store runs as a service on Microsoft Windows systems. The services are started when the installation
+completes. 
+
+You can change certain startup parameters by starting Edge Data Store using command-line options:
+
+::
+
+  --port 5000 
+  --localstoragelocation C:\ProgramData\OSIsoft\Data.Edge 
+  --servercert /path/to/certificate.pfx 
+  --clientcertthumbprint 108b506e734... 
+  --debugomf <true|false>
+
+Startup options are stored in the following file:
+
+::
+
+  C:\ProgramData\OSIsoft\Data.Edge.PersistedSettings\appsettings.json
+  
+You can edit the settings file and restart Edge Data Store or use the command line options.
+
+
+**For Linux systems:**
+
 
 
 
