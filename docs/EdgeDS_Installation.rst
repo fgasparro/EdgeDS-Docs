@@ -20,7 +20,7 @@ Edge Data Store System Requirements
 * Dual-core CPU (X86 or ARM)
 
 * Persistent storage (SSD Preferred)
-* Historian files (128 MB required)
+* Edge Data Store files (128 MB required)
 * Historical storage - TBD
 
 **Supported operating systems**
@@ -37,7 +37,9 @@ The Edge Data Store requires the following software to be installed:
 
 * Linux - libunwind8 
 
-Other than the packages listed above, the platform-specific Edge Data Store packages contain all of the files necessary to run the software. Platform-independent packages are also available; however, these packages require .NET Core 2.0 to be installed prior to installing Edge Data Store. 
+Other than the packages listed above, the platform-specific Edge Data Store packages contain all of the files 
+necessary to run the software. Platform-independent packages are also available; however, these packages require 
+.NET Core 2.0 to be installed prior to installing Edge Data Store. 
 
 Windows installation
 --------------------
@@ -47,7 +49,7 @@ Follow the instructions in this section to install Edge Data Store on Microsoft 
 1) Download the Windows msi file from OSIsoft.
 2) Use Windows Explorer to navigate to the location where the msi file was downloaded, then double-click the file.
    Follow the prompts to install the software.
-3) Using a browser, start the user interface by browsing to:
+3) Using a browser, start the user interface by browsing to the following location:
 
    ``localhost:5000``
 
@@ -65,7 +67,7 @@ Follow the instructions in this section to install Edge Data Store on Windows co
    
   You can also specify a directory in which to install:
    
-   ``tar -xvf EdgeDataServerInstall.tar -C *your directory*``
+  ``tar -xvf EdgeDataServerInstall.tar -C *your directory*``
 
 
 Docker image installation
@@ -102,7 +104,7 @@ Perform the following steps to adjust the periodic checkpoint rate:
 ::
 
   {
-  "CheckpointRateInSec": 30 
+    "CheckpointRateInSec": 30 
   }
 
 3. Modify the original value (30 in this example), to the number of seconds you wish the periodic checkpoint to occur.
@@ -200,7 +202,7 @@ browser and your operating environment.
 1. Use Windows Explorer to locate the certificate. If you used the default installation options, the certificate file
    is located in the following directory:
 
-   ``C:\Program Files\OSIsoft\EdgeHistorian\EdgeRootCert.crt``
+   ``C:\Program Files\OSIsoft\EdgeDataStore\EdgeRootCert.crt``
 
 2. Double click the certificate file (EdgeRootCert.crt).
 
