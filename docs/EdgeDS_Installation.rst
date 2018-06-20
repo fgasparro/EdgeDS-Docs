@@ -112,20 +112,6 @@ Perform the following steps to adjust the periodic checkpoint rate:
 4. Restart the Edge Data Server.
 
 
-
-Restarting Edge services
-------------------------
-
-Occasionally, it might be necessary to restart the Edge services. 
-
-**Windows**
-
-1. From the Start menu, open the *Control Panel*. 
-2. Select *Administrative Tools*. 
-3. From the Administrative Tools window, open Services. 
-4. Select the ``OSIsoft Edge Data Store`` service and then click ``Restart``. 
-
-
 Starting the Edge Data Store
 ----------------------------
 
@@ -139,23 +125,6 @@ executable file can be found in the following directory:
 
 ``C:\Program Files\OSIsoft\EdgeDataStore\OSIsoft.Data.Edge.Server.exe``
 
-You can change certain startup parameters by starting Edge Data Store using command-line options:
-
-::
-
-  --port 5000 
-  --localstoragelocation C:\ProgramData\OSIsoft\Data.Edge 
-  --servercert /path/to/certificate.pfx 
-  --clientcertthumbprint 108b506e734... 
-  --debugomf <true|false>
-
-Startup options are stored in the following file:
-
-::
-
-  C:\ProgramData\OSIsoft\Data.Edge.PersistedSettings\appsettings.json
-  
-You can edit the settings file and restart Edge Data Store or use the command line options.
 
 
 **For Linux systems:**
@@ -175,6 +144,59 @@ with the following command:
   sudo ./OSIsoft.Data.Edge.Server --help
 
 
+Restarting Edge services
+------------------------
+
+Occasionally, it might be necessary to restart the Edge services. 
+
+**Windows**
+
+1. From the Start menu, open the *Control Panel*. 
+2. Select *Administrative Tools*. 
+3. From the Administrative Tools window, open Services. 
+4. Select the ``OSIsoft Edge Data Store`` service and then click ``Restart``. 
+
+
+Command line options
+--------------------
+
+You can change certain startup parameters by starting Edge Data Store using command-line options. To view the default 
+startup options, run the following command:
+
+**For Windows systems:**
+
+::
+
+  OSIsoft.Data.Edge.Server.exe --help
+  
+
+**For Linux systems:**
+
+::
+
+  sudo ./OSIsoft.Data.Edge.Server --help
+  
+The output of the command resembles the following:
+
+::
+
+  Optional commandline arguments shown below with their default values.
+
+  #####################
+
+  --port 5000 --localstoragelocation C:\ProgramData\OSIsoft\Data.Edge --maxrequestbodysize 196608
+  --servercert /path/to/certificate.pfx --clientcertthumbprint 108b506e734...
+
+  #####################
+
+
+Startup options are stored in the following file:
+
+::
+
+  C:\ProgramData\OSIsoft\Data.Edge.PersistedSettings\appsettings.json
+  
+You can edit the settings file and restart Edge Data Store or use the command line options to alter the default behavior.
 
 
 Edge Certificates
