@@ -185,7 +185,7 @@ The output of the command resembles the following:
   #####################
 
   --port 5000 --localstoragelocation C:\ProgramData\OSIsoft\Data.Edge --maxrequestbodysize 196608
-  --servercert /path/to/certificate.pfx --clientcertthumbprint 108b506e734...
+  --servercert /path/to/certificate.pfx
 
   #####################
 
