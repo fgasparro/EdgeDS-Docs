@@ -1,7 +1,7 @@
 Configure Edge Data Store Egress
 ================================
 
-You use the IQiEdgeEgressService instance to configure various aspects of the Egress feature of Edge Data Store. 
+You use the ISdsEdgeEgressService instance to configure various aspects of the Egress feature of Edge Data Store. 
 The sections that follow show how to specify and work with egress targets. You can configure the destination to 
 which your Edge Data Store server will transfer data. Possible target products are:
 
