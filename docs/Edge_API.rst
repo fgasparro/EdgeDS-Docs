@@ -9,21 +9,20 @@ The Edge Data Store REST APIs provide programmatic access for data ingress or eg
 ``Change password``
 -----------------
 
-Changes the password for the Edge data server. 
+Used to change the password for the Edge data server. 
 
 
 **Request**
 
 ::
 
-    POST /edge/api/ChangePw
+    POST /edge/api/security/ChangePassword
 
 
 **Parameters**
 
 ``string Producer token``
   Your producer token 
-
 
 {
   "currentPw": "string",
@@ -45,7 +44,7 @@ Changes the password for the Edge data server.
 ::
 
   Task<QiView> GetViewAsync(string viewId);
-
+  ???
 
 **Security**
 
@@ -60,7 +59,7 @@ Data Server
 ``Get stream count``
 -------------------
 
-Retrieve the current stream count.
+Returns the number of streams that are currently in all of the tenanta and namespaces.
 
 
 **Request**
@@ -99,10 +98,10 @@ Retrieve the current stream count.
 
 ***********************
 
-``Retrieve the local data store configuration``
--------------------
+``Get data store configuration``
+------------------------------
 
-Retrieve the local data store configuration.
+Returns the current configuration of the Edge data store.
 
 
 **Request**
@@ -143,10 +142,15 @@ Retrieve the local data store configuration.
 ***********************
 
 
-``Get ``
--------------------
+``Configure stream limits``
+--------------------------
 
-Write new configuration data. 
+Configure the stream target size and maximum size. 
+The target size represents the size of most streams you expect to send to the server. The limit size represents 
+the maximum stream size that will be sent to the server.
+
+For example, suppost the target size is set to 2 MB and the maaximum size is set to 5 MB. In this case, as the stream
+approaches 5 MB in size, the server truncates data (from the front of the stream) size at 5 MB to achieve the 2 MB target size.
 
 
 **Request**
@@ -186,10 +190,10 @@ Write new configuration data.
 ***********************
 
 
-``Get ``
+``Get metrics``
 -------------------
 
-Retrieve current server process metrics.
+Returns information about the performance of the Edge data server, such as memory usage, CPU usage, and storage usage. 
 
 
 **Request**
@@ -233,7 +237,9 @@ Retrieve current server process metrics.
 ``Get startup parameters``
 ------------------------
 
-Retrieve a list of current startup parameters
+Retrieve a list of parameters that were used to start the Edge data server, such as listener port, the location 
+of data storage, and the maximum length of a request that is accepted by the data store.
+blah
 
 
 **Request**
