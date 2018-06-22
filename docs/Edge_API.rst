@@ -99,4 +99,477 @@ Retrieve the current stream count.
 
 ***********************
 
+``Retrieve the local data store configuration``
+-------------------
+
+Retrieve the local data store configuration.
+
+
+**Request**
+
+::
+
+
+  GET /edge/api/DataServer/localstoreconfiguration  
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Get ``
+-------------------
+
+Write new configuration data. 
+
+
+**Request**
+
+::
+
+    PUT /edge/api/DataServer/localstoreconfiguration
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Get ``
+-------------------
+
+Retrieve current server process metrics.
+
+
+**Request**
+
+::
+
+  GET /edge/api/DataServer/serverprocessmetrics
+    
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Get startup parameters``
+------------------------
+
+Retrieve a list of current startup parameters
+
+
+**Request**
+
+::
+
+    GET /edge/api/DataServer/startuparguments
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Change startup parameters``
+-------------------
+
+Change startup parameters 
+
+
+**Request**
+
+::
+
+   PUT /edge/api/DataServer/startuparguments
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Write ??? ``
+-------------------
+
+???
+
+
+**Request**
+
+::
+
+    PUT /edge/api/DataServer/purgeeventdata
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Reset configuration information``
+-------------------
+
+??? 
+
+
+**Request**
+
+::
+
+    PUT /edge/api/DataServer/resetconfiguration
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+``Retrieve server metrics ``
+-------------------
+
+Retrieve ...
+
+
+**Request**
+
+::
+
+    GET /edge/api/DataServer/requestsmetrics
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``???``
+-------------------
+
+Retrieve ???
+
+
+**Request**
+
+::
+
+    GET /edge/api/Egress/omf/targets/{isRunning}
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Get ``
+-------------------
+
+Retrieve 
+
+
+**Request**
+
+::
+
+    GET /edge/api/Egress/omf/targets
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
+
+``Get ``
+-------------------
+
+Retrieve 
+
+
+**Request**
+
+::
+
+    GET /edge/api/Egress/omf/targets/{targetId}/sdsentitiesqueueprocessingparameters
+
+
+**Parameters**
+
+``string Producer token``
+  Your producer token 
+
+
+**Response**
+
+  The response includes a status code and a response body.
+  
+
+**Response body**
+
+  
+
+**.NET Library**
+
+::
+
+  Task<QiView> GetViewAsync(string viewId);
+
+
+**Security**
+
+  Allowed for administrator and user accounts
+
+
+***********************
+
 
