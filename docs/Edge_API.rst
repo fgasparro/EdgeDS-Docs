@@ -1397,10 +1397,10 @@ Ingress
 
 
 
-``Get ``
+``Ingress data``
 -------------------
 
-Retrieve 
+Ingress data from an OMF message to a specified tenent ID and namespace.
 
 
 **Request**
@@ -1440,10 +1440,11 @@ Retrieve
 ***********************
 
 
-``Get ``
+``Get egress flag``
 -------------------
 
-Retrieve 
+Returns the current state of the egress debug flag. The flag determines whether debug is enabled for the specified 
+tenant and namespace.
 
 
 **Request**
@@ -1483,10 +1484,12 @@ Retrieve
 ***********************
 
 
-``Get ``
--------------------
+``Set egress debug flag``
+------------------------
 
-Retrieve 
+Sets the state of the egress debug flag. 
+
+
 
 
 **Request**
@@ -1529,10 +1532,10 @@ Registration
 ------------
 
 
-``Get ``
+``Get registration data``
 -------------------
 
-Retrieve 
+Returns registration data. 
 
 
 **Request**
@@ -1572,10 +1575,10 @@ Retrieve
 ***********************
 
 
-``Get ``
+``Set registration information``
 -------------------
 
-Retrieve 
+Writes registration data. 
 
 
 **Request**
@@ -1589,7 +1592,15 @@ Retrieve
 
 ``string Producer token``
   Your producer token 
-
+{
+  "lastName": "string",
+  "firstName": "string",
+  "email": "string",
+  "companyName": "string",
+  "address": "string",
+  "phoneNumber": "string",
+  "contactConsent": true
+}
 
 **Response**
 
