@@ -457,10 +457,12 @@ Egress
 ------
 
 
-``???``
--------------------
+``List egress targets``
+---------------------
 
-Retrieve ???
+Returns a list of running or not running egress targets. The isRunning flag is used to indicate whether to retun egress targets that 
+are either running or not running.
+
 
 
 **Request**
@@ -503,7 +505,7 @@ Retrieve ???
 ``Get ``
 -------------------
 
-Retrieve 
+Returns a list of all egress targets (both those that are running and those that are not running).
 
 
 **Request**
@@ -542,6 +544,7 @@ Retrieve
 
 ***********************
 
+Check with manas about whether 
 
 ``Get ``
 -------------------
@@ -719,10 +722,10 @@ Retrieve
 
 
 
-``Get ``
+``Get a target``
 -------------------
 
-Retrieve 
+Retrieves an individual egress target.
 
 
 **Request**
@@ -736,6 +739,9 @@ Retrieve
 
 ``string Producer token``
   Your producer token 
+``string targetId``
+  The egress target to retrieve 
+  
 
 
 **Response**
@@ -763,10 +769,10 @@ Retrieve
 
 
 
-``Get ``
--------------------
+``Modify an egress target``
+--------------------------
 
-Retrieve 
+Modifies an egress target.
 
 
 **Request**
@@ -807,10 +813,10 @@ Retrieve
 
 
 
-``Get ``
--------------------
+``Create egress target ``
+----------------------
 
-Retrieve 
+Create an egress target. 
 
 
 **Request**
@@ -851,10 +857,10 @@ Retrieve
 
 
 
-``Get ``
+``Delete target``
 -------------------
 
-Retrieve 
+Deletes an egress target. 
 
 
 **Request**
@@ -895,10 +901,12 @@ Retrieve
 
 
 
-``Get ``
+``Enable debug dump``
 -------------------
 
-Retrieve 
+Enables a dump of egress data to be written to disk, enabling you to determine exactly what was egressed from the product.
+This call is useful when you want to ensure the egress data was actually received by OCS.
+
 
 
 **Request**
@@ -940,10 +948,10 @@ Retrieve
 
 
 
-``Get ``
+``Add or update egress target``
 -------------------
 
-Retrieve 
+Creates an egress target if one does not already exist, or, if the target exists, modifies the egress target. 
 
 
 **Request**
@@ -984,10 +992,10 @@ Retrieve
 
 
 
-``Get ``
+``Start an egress target``
 -------------------
 
-Retrieve 
+Starts a specified egress target. 
 
 
 **Request**
@@ -1028,10 +1036,10 @@ Retrieve
 
 
 
-``Get ``
--------------------
+``Stop an egress target``
+-----------------------
 
-Retrieve 
+Stops a specified egress target. 
 
 
 **Request**
@@ -1072,10 +1080,10 @@ Retrieve
 
 
 
-``Get ``
--------------------
+``Determine if egress target exists``
+------------------------------------
 
-Retrieve 
+Returns a boolean indicating whether the specified target egress engine exists. 
 
 
 **Request**
@@ -1116,10 +1124,10 @@ Retrieve
 
 
 
-``Get ``
+``Get egress rate``
 -------------------
 
-Retrieve 
+Returns the rate at which data is egressing from the data store. 
 
 
 **Request**
@@ -1159,11 +1167,10 @@ Retrieve
 ***********************
 
 
-
-``Get ``
+``Get egress rules``
 -------------------
 
-Retrieve 
+Returns a list of rules that are defined for a specified egress target.
 
 
 **Request**
@@ -1203,10 +1210,10 @@ Retrieve
 ***********************
 
 
-``Get ``
+``Add rule``
 -------------------
 
-Retrieve 
+Adds a rule for a specified egress target.
 
 
 **Request**
@@ -1221,6 +1228,17 @@ Retrieve
 ``string Producer token``
   Your producer token 
 
+{
+  "id": "string",
+  "name": "string",
+  "description": "string",
+  "streamFilterId": "string",
+  "streamFilterTypeId": "string",
+  "streamFilterTags": "string",
+  "streamFilterMetadataKey": "string",
+  "streamFilterMetadataValue": "string",
+  "eventFilter": "string"
+}
 
 **Response**
 
@@ -1246,10 +1264,10 @@ Retrieve
 ***********************
 
 
-``Get ``
+``Get individual rule``
 -------------------
 
-Retrieve 
+Returns an individual rule based on the rule ID. 
 
 
 **Request**
@@ -1289,10 +1307,10 @@ Retrieve
 ***********************
 
 
-``Get ``
+``Update a rule``
 -------------------
 
-Retrieve 
+Updates an egress rule based on the specified rule ID. 
 
 
 **Request**
@@ -1332,10 +1350,10 @@ Retrieve
 ***********************
 
 
-``Get ``
+``Delete a rule``
 -------------------
 
-Retrieve 
+Deletes the egress rule specified by the rule ID.
 
 
 **Request**
