@@ -457,8 +457,8 @@ Egress
 ------
 
 
-``List egress targets``
----------------------
+``List running egress targets``
+-----------------------------
 
 Returns a list of running or not running egress targets. The isRunning flag is used to indicate whether to retun egress targets that 
 are either running or not running.
@@ -502,7 +502,7 @@ are either running or not running.
 ***********************
 
 
-``Get ``
+``List egress targets``
 -------------------
 
 Returns a list of all egress targets (both those that are running and those that are not running).
@@ -544,7 +544,7 @@ Returns a list of all egress targets (both those that are running and those that
 
 ***********************
 
-Check with manas about whether 
+Check with manas about whether to include the next 4
 
 ``Get ``
 -------------------
@@ -769,7 +769,7 @@ Retrieves an individual egress target.
 
 
 
-``Modify an egress target``
+``Modify egress target``
 --------------------------
 
 Modifies an egress target.
@@ -1228,17 +1228,19 @@ Adds a rule for a specified egress target.
 ``string Producer token``
   Your producer token 
 
-{
-  "id": "string",
-  "name": "string",
-  "description": "string",
-  "streamFilterId": "string",
-  "streamFilterTypeId": "string",
-  "streamFilterTags": "string",
-  "streamFilterMetadataKey": "string",
-  "streamFilterMetadataValue": "string",
-  "eventFilter": "string"
-}
+::
+
+  {
+    "id": "string",
+    "name": "string",
+    "description": "string",
+    "streamFilterId": "string",
+    "streamFilterTypeId": "string",
+    "streamFilterTags": "string",
+    "streamFilterMetadataKey": "string",
+    "streamFilterMetadataValue": "string",
+    "eventFilter": "string"
+  }
 
 **Response**
 
