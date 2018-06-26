@@ -254,15 +254,9 @@ browser and your operating environment.
 
 ::
 
-  sudo cp EdgeRootCert.cer /usr/local/share/ca-certificates/
+  sudo cp EdgeRootCert.crt /usr/local/share/ca-certificates/EdgeRootCert.crt
   
-2. Run the following command: 
-
-::
-
-  sudo cp EdgeRootCert.cer /usr/local/share/ca-certificates/EdgeRootCert.cer
-  
-3: Run the following command to update the certificate authority store:
+2: Run the following command to update the certificate authority store:
 
 ::
 
