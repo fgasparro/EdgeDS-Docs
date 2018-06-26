@@ -43,8 +43,7 @@ Change the password you use for the Edge data server.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
-  ???
+ 
 
 **Security**
 
@@ -88,7 +87,7 @@ Returns the number of streams that currently exist in all of the tenants and nam
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task<int> GetTotalStreamCountAsync();
 
 
 **Security**
@@ -131,7 +130,7 @@ Returns the current configuration of the Edge data store.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task<LocalStoreConfiguration> GetLocalStoreConfigurationAsync();
 
 
 **Security**
@@ -183,7 +182,7 @@ approaches 5 MB in size, the server truncates stream data (from the front of the
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task SetLocalStoreConfigurationAsync(LocalStoreConfiguration configuration);
 
 
 **Security**
@@ -227,7 +226,7 @@ Returns information about the performance of the Edge data server, such as memor
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task<Dictionary<string, string>> GetServerProcessMetricsAsync();
 
 
 **Security**
@@ -271,7 +270,7 @@ of data storage, and the maximum length of a request that is accepted by the dat
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task<StartupArguments> GetStartupArgumentsAsync();
 
 
 **Security**
@@ -315,7 +314,7 @@ take effect.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task SetStartupArgumentsAsync(StartupArguments arguments);
 
 
 **Security**
@@ -358,7 +357,7 @@ Purges all of the event data from all streams, namespaces, and tenants.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task PurgeEventDataAsync();
 
 
 **Security**
@@ -401,7 +400,7 @@ Resets all egress configuration back to the point where egress is no longer conf
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task ResetConfigurationAsync();
 
 
 **Security**
@@ -443,7 +442,7 @@ Retrieves metrics information about server data requests.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  Task<Dictionary<string, double>> GetRequestsMetricsAsync();
 
 
 **Security**
@@ -491,7 +490,7 @@ are either running or not running.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -534,7 +533,7 @@ Returns a list of all egress targets (both those that are running and those that
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -578,7 +577,7 @@ Retrieve
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -622,7 +621,7 @@ Retrieve
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -665,7 +664,7 @@ Retrieve
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -710,7 +709,7 @@ Retrieve
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -757,7 +756,7 @@ Retrieves an individual egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -801,7 +800,7 @@ Modifies an egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -845,7 +844,7 @@ Create an egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -889,7 +888,7 @@ Deletes an egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -936,7 +935,7 @@ This call is useful when you want to ensure the egress data was actually receive
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -980,7 +979,7 @@ Creates an egress target if one does not already exist, or, if the target exists
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1024,7 +1023,7 @@ Starts a specified egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1068,7 +1067,7 @@ Stops a specified egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1112,7 +1111,7 @@ Returns a boolean indicating whether the specified target egress engine exists.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1156,7 +1155,7 @@ Returns the rate at which data is egressing from the data store.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1199,7 +1198,7 @@ Returns a list of rules that are defined for a specified egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1255,7 +1254,7 @@ Adds a rule for a specified egress target.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1298,7 +1297,7 @@ Returns an individual rule based on the rule ID.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1341,7 +1340,7 @@ Updates an egress rule based on the specified rule ID.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1384,7 +1383,7 @@ Deletes the egress rule specified by the rule ID.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1431,7 +1430,7 @@ Ingress data from an OMF message to a specified tenent ID and namespace.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1475,7 +1474,7 @@ tenant and namespace.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1520,7 +1519,7 @@ Sets the state of the egress debug flag.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1566,7 +1565,7 @@ Returns registration data.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
@@ -1617,7 +1616,7 @@ Writes registration data.
 
 ::
 
-  Task<QiView> GetViewAsync(string viewId);
+  
 
 
 **Security**
