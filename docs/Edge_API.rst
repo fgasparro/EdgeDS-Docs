@@ -459,8 +459,8 @@ Egress
 ``List running egress targets``
 -----------------------------
 
-Returns a list of running or not running egress targets. The isRunning flag is used to indicate whether to retun egress targets that 
-are either running or not running.
+Returns a list of running or not running egress targets by target ID. The isRunning flag is used to indicate whether to 
+return egress targets that are either running or not running.
 
 
 
@@ -490,7 +490,7 @@ are either running or not running.
 
 ::
 
-  
+  Task<EngineParameters> GetTargetAsync(string targetId);
 
 
 **Security**
@@ -533,7 +533,7 @@ Returns a list of all egress targets (both those that are running and those that
 
 ::
 
-  
+  Task<IEnumerable<EngineParameters>> GetTargetsAsync();
 
 
 **Security**
@@ -800,7 +800,7 @@ Modifies an egress target.
 
 ::
 
-  
+  Task UpdateTargetAsync(string targetId, string newTargetId, string newDescription, StartupArguments startupArguments);
 
 
 **Security**
@@ -844,7 +844,7 @@ Create an egress target.
 
 ::
 
-  
+  Task CreateTargetAsync(string targetId, string description, StartupArguments startupArguments);
 
 
 **Security**
@@ -888,7 +888,7 @@ Deletes an egress target.
 
 ::
 
-  
+  Task DeleteTargetAsync(string targetId);
 
 
 **Security**
@@ -979,7 +979,7 @@ Creates an egress target if one does not already exist, or, if the target exists
 
 ::
 
-  
+  Task CreateOrUpdateTargetAsync(string targetId, string description, StartupArguments startupArguments);
 
 
 **Security**
@@ -1023,7 +1023,7 @@ Starts a specified egress target.
 
 ::
 
-  
+  Task StartTargetAsync(string targetId);
 
 
 **Security**
@@ -1067,7 +1067,7 @@ Stops a specified egress target.
 
 ::
 
-  
+  Task StopTargetAsync(string targetId);
 
 
 **Security**
@@ -1111,7 +1111,7 @@ Returns a boolean indicating whether the specified target egress engine exists.
 
 ::
 
-  
+  Task<bool> PingTargetAsync(string targetId);
 
 
 **Security**
@@ -1198,7 +1198,7 @@ Returns a list of rules that are defined for a specified egress target.
 
 ::
 
-  
+  Task<IEnumerable<EgressRule>> GetRulesAsync(string targetId);
 
 
 **Security**
@@ -1254,7 +1254,7 @@ Adds a rule for a specified egress target.
 
 ::
 
-  
+  Task CreateRuleAsync(string targetId, EgressRule rule);
 
 
 **Security**
@@ -1297,7 +1297,7 @@ Returns an individual rule based on the rule ID.
 
 ::
 
-  
+  Task<EgressRule> GetRuleAsync(string targetId, string ruleId);
 
 
 **Security**
@@ -1340,7 +1340,7 @@ Updates an egress rule based on the specified rule ID.
 
 ::
 
-  
+  Task UpdateRuleAsync(string targetId, string ruleId, EgressRule updatedRule);
 
 
 **Security**
@@ -1383,7 +1383,7 @@ Deletes the egress rule specified by the rule ID.
 
 ::
 
-  
+  Task DeleteRuleAsync(string targetId, string ruleId);
 
 
 **Security**
