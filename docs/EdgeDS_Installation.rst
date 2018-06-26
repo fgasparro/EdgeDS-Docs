@@ -136,7 +136,7 @@ run the following command:
 
   sudo ./OSIsoft.Data.Edge.Server
 
-Optionally, you can specify command-line options to override the default settings. You can view the defaule settings
+Optionally, you can specify command-line options to override the default settings. You can view the default settings
 with the following command:
 
 ::
@@ -261,4 +261,53 @@ browser and your operating environment.
 ::
 
   sudo update-ca-certificates
+
+
+Certificates for browser support
+--------------------------------
+
+
+If your browser reports that the Edge data store site (https://localhost:5000) is not secure, you should follow 
+the instructions in this section to supply a security certificate for your browser. The instructions here are specific
+to Chrome browsers; however, the procedure should be similar for most browsers.
+
+1. With the Chrome browser open, click the Menu button (located next to the website address bar) then click ``Settings``.
+   The Settings section opens in a new tab.
+
+2. Scroll down to the Advanced section of the page and click ``Advanced``.
+
+3. In the Privacy and security section, click ``Manage certificates``.
+
+    Select one of the following depending on the browser you are using:
+    
+    *If you are using the Chrome browser:*
+    
+    a. From the Certificates window, select ``Import``.
+       The Certificate Import Wizard displays.
+       
+    b. Click ``Next``.
+    c. Click the ``Browse`` button, locate the certificate file, and click ``Open''
+    d. Click Next.
+    e. Select ``Place all certificates in the following store`` and select ``Trusted Root Certification Authorities.``
+    f. Click ``Next`` then click ``Finish``.
+
+
+    *If you are using the Chromium browser:*
+    
+    a. Select the ``Authorities`` tab.
+    b. Click ``Import``.
+    c. Browse to the location containing your Edge certificate and select it.
+    d. Click ``Open``.
+    e. In the *Certificate authority* window, select ``Trust this certificate for identifying websites.``
+    f. Click ``OK``.
+   
+After selecting the security certificate, you should stop and then restart your browser.   
+
+
+
+
+
+
+
+
 
