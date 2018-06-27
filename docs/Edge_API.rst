@@ -24,11 +24,14 @@ Change the password you use for the Edge data server.
 ``string Producer token``
   Your producer token 
 
-{
-  "currentPw": "string",
-  "pw1": "string",
-  "pw2": "string"
-}
+::
+
+  {
+    "currentPw": "string",
+    "pw1": "string",
+    "pw2": "string"
+  }
+
 
 **Response**
 
@@ -43,7 +46,9 @@ Change the password you use for the Edge data server.
 
 ::
 
- 
+  Task ChangePassword(ChangePasswordData changeRequest);
+  
+  
 
 **Security**
 
@@ -756,7 +761,7 @@ Retrieves an individual egress target.
 
 ::
 
-  
+  Task<EngineParameters> GetTargetAsync(string targetId);
 
 
 **Security**
@@ -1155,7 +1160,7 @@ Returns the rate at which data is egressing from the data store.
 
 ::
 
-  
+  Task<Dictionary<(string, string), int>> GetEgressRateAsync(string targetId);
 
 
 **Security**
@@ -1577,7 +1582,7 @@ Returns registration data.
 
 
 ``Set registration information``
--------------------
+------------------------------
 
 Writes registration data. 
 
@@ -1593,15 +1598,19 @@ Writes registration data.
 
 ``string Producer token``
   Your producer token 
-{
-  "lastName": "string",
-  "firstName": "string",
-  "email": "string",
-  "companyName": "string",
-  "address": "string",
-  "phoneNumber": "string",
-  "contactConsent": true
-}
+  
+::
+
+  {
+    "lastName": "string",
+    "firstName": "string",
+    "email": "string",
+    "companyName": "string",
+    "address": "string",
+    "phoneNumber": "string",
+    "contactConsent": true
+  }
+
 
 **Response**
 
