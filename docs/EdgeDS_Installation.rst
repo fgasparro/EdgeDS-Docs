@@ -16,19 +16,21 @@ Edge Data Store System Requirements
 **Recommended Hardware**
 
 
-* 1GB Ram or Greater - Highly dependent on the number of streams 
-* Dual-core CPU (X86 or ARM)
-
+* 1GB RAM or Greater (Highly dependent on the number of streams) 
+* Dual-core CPU (X64 or ARM)
+* X64 or ARM 32-bit for platform-specific releases, or any platform which supports .Net Core for platform-independent releases.
 * Persistent storage (SSD Preferred)
 * Edge Data Store files (128 MB required)
-* Historical storage - TBD
+* Storage for historical data: TBD
+
 
 **Supported operating systems**
 
 * Ubuntu 16.04
-* Windows 10, 2016 
+* Windows 10, Server 2016 
 * Windows IoT Core 
 * Debian 9 - ARM
+
 
 **Prerequisites**
 
@@ -41,6 +43,20 @@ Other than the packages listed above, the platform-specific Edge Data Store pack
 necessary to run the software. Platform-independent packages are also available; however, these packages require 
 .NET Core 2.0 to be installed prior to installing Edge Data Store. 
 
+The platform-specific releases supported by Edge Data Store that do not require pre-installation of .Net 
+Core are as follows: 
+
+* Windows 10 x64, 
+* Linux x64 
+* Linux ARM 32-bit.
+
+To install libunwind8 on Ubuntu or Debian Linux systems, run the following command:
+
+::
+
+  sudo apt-get install libunwind8
+  
+
 Windows installation
 --------------------
 
@@ -51,7 +67,7 @@ Follow the instructions in this section to install Edge Data Store on Microsoft 
    Follow the prompts to install the software.
 3) Using a browser, start the user interface by browsing to the following location:
 
-   ``localhost:5000``
+   ``https://localhost:5000``
 
 
 
@@ -202,11 +218,36 @@ You can edit the settings file and restart Edge Data Store or use the command li
 Edge Certificates
 -----------------
 
-In order for the default Edge data store installation to work correctly with your browser, you must have two 
-security certificates installed: a machine certificate, which permits localhost access, and a root certificate, 
-which validates the machine certificate.
- 
-OSIsoft provides certificates for testing purposes; your IT department probably has its own guidelines and procedures 
+blah
+
+In order for the default Edge data store installation to work correctly with your browser or client application, 
+you must have two security certificates installed: 
+
+* On the server host, you must have a certificate with an associated private key that is bound to the Edge Data Store service.
+
+* On the client host, you must have a “root” certificate, which the client uses to validate the server’s certificate.
+
+  - In the case of a “self-signed” certificate, the root and server certificate are one and the same.
+   
+  - In the case of a certificate signed by a certificate authority (CA), the CA root certificate is installed.
+   
+  - In any case, the root certificate must be “trusted” – the procedure to install a root certificate so that 
+    it is “trusted” varies based on the operating system and the application.
+     
+*	Note that the client host and server host may be the same host (a “localhost” certificate).
+
+For testing purporses, a localhost certificate and associated private key are provided with the Edge Data Store 
+installation. The certificate has been signed by a test root authority, and the root authority certificate is also provided.
+
+-  If you do not provide your own server certificate (with its associated private key) the test certificate 
+   will be bound to the service by default.
+-  If using the test certificate, the root certificate must be installed on the local computer so that it 
+   is trusted by your application or browser.
+-  The test certificate only supports localhost. If you want to cross the machine boundary (that is, if the 
+   Edge Data Store is installed on one computer and you want to access it from a different computer) you must provide 
+   a certificate that supports this.
+
+OSIsoft provides certificates for testing purposes only; your IT department probably has its own guidelines and procedures 
 for managing digital certificates. You should use the digital certificates recommended by your IT department.
  
 The instructions on this page show how to install the OSIsoft root certificate into a trusted location, which in 
