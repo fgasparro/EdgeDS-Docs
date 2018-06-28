@@ -47,15 +47,17 @@ All reads are HTTP GET actions. Reading data involves getting events from stream
 Response Format
 ---------------
 
-Supported response formats include json, verbose json, and Sds. 
+Supported response formats include JSON, verbose JSON, and SDS. 
 
-The default response format for is json, which is used in all examples in this document.  Default json 
+The default response format is JSON, which is used in all examples in this document.  Default JSON
 responses do not include any values that are equal to the default value for their type.
 
-Verbose json responses include all values, including defaults, in the returned json payload. To specify 
-verbose json return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request.  
+Verbose JSON responses include all values, including defaults, in the returned JSON payload. To specify 
+verbose JSON return, add the header ``Accept-Verbosity`` with a value of ``verbose`` to the request, and
+set the ``Accept`` header with the value: ``application/json``.  
 
 To specify SDS format, set the ``Accept`` header in the request to ``application/Sds``.
+
 
 Indexes and reading data
 ------------------------
