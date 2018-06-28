@@ -43,7 +43,7 @@ Security
 
 
 ``GetNamespacesAsync()``
-----------------
+------------------------
 
 Retrieves a list of existing namespaces.
 
@@ -79,7 +79,7 @@ Security
 
 
 ``GetOrCreateNamespaceAsync()``
-----------------
+-------------------------------
 
 Returns the namespace with the specified namespaceId, or creates the namespace if the namespace does not already exist. 
 If the namespace exists, it is returned to the caller unchanged. For security, this method is 
@@ -122,7 +122,7 @@ executable only by an administrator account.
 
 
 ``DeleteNamespaceAsync()``
-----------------
+--------------------------
 
 Deletes the namespace with the specified namespaceId from the tenant specified by the tenantId.
 
