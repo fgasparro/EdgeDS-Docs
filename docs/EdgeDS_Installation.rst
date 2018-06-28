@@ -330,19 +330,28 @@ to Chrome browsers; however, the procedure should be similar for most browsers.
        The Certificate Import Wizard displays.
        
     b. Click ``Next``.
-    c. Click the ``Browse`` button, locate the certificate file, and click ``Open''
+    
+    c. Click the ``Browse`` button, locate the certificate file, and click ``Open''.
+    
     d. Click Next.
+    
     e. Select ``Place all certificates in the following store`` and select ``Trusted Root Certification Authorities.``
+    
     f. Click ``Next`` then click ``Finish``.
 
 
     *If you are using the Chromium browser:*
     
     a. Select the ``Authorities`` tab.
+    
     b. Click ``Import``.
+    
     c. Browse to the location containing your Edge certificate and select it.
+    
     d. Click ``Open``.
+    
     e. In the *Certificate authority* window, select ``Trust this certificate for identifying websites.``
+    
     f. Click ``OK``.
    
 After selecting the security certificate, you should stop and then restart your browser.   
