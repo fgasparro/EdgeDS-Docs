@@ -1,14 +1,14 @@
 Using OMF with Edge Data Store
-=============================
+==============================
 
-The OMF specification (located `here <http://omf-docs.osisoft.com>`_) is generic in that it does
+The `OMF specification <http://omf-docs.osisoft.com>` is generic in that it does
 not specify a particular back-end system. This topic is a companion to the OMF specification which describes how
 OMF is interpreted by OSIsoft Edge Data Store.  
 
 Headers
 -------
 
-A description of each of the headers can be found in the `OMF spec <http://omf-docs.osisoft.com>`_. When 
+A description of each of the headers can be found in the `OMF specification <http://omf-docs.osisoft.com>`. When 
 sending messages to Edge DS, the value of the ``producertoken`` header must be 
 set to a security token obtained from the Edge DS. The security token is used to authenticate 
 the sender and to authorize the sender for use with a particular Edge DS.
