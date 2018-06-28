@@ -24,6 +24,7 @@ Change the password you use for the Edge data server.
 ``string Producer token``
   Your producer token 
 
+
 ::
 
   {
@@ -61,7 +62,7 @@ Data Server
 -----------
 
 ``Get stream count``
--------------------
+--------------------
 
 Returns the number of streams that currently exist in all of the tenants and namespaces.
 
@@ -103,7 +104,7 @@ Returns the number of streams that currently exist in all of the tenants and nam
 ***********************
 
 ``Get data store configuration``
-------------------------------
+--------------------------------
 
 Returns the current configuration of the Edge data store.
 
@@ -199,7 +200,7 @@ approaches 5 MB in size, the server truncates stream data (from the front of the
 
 
 ``Get metrics``
--------------------
+-----------------
 
 Returns information about the performance of the Edge data server, such as memory usage, CPU usage, and storage usage. 
 
@@ -243,7 +244,7 @@ Returns information about the performance of the Edge data server, such as memor
 
 
 ``Get startup parameters``
-------------------------
+--------------------------
 
 Retrieves a list of parameters that were used to start the Edge data server, such as listener port, the location 
 of data storage, and the maximum length of a request that is accepted by the data store.
@@ -287,7 +288,7 @@ of data storage, and the maximum length of a request that is accepted by the dat
 
 
 ``Change startup parameters``
--------------------
+-----------------------------
 
 Modifies the Edge data store startup parameters. Note that you must restart the server in order for changes to 
 take effect.
@@ -331,7 +332,7 @@ take effect.
 
 
 ``Purge event data``
--------------------
+--------------------
 
 Purges all of the event data from all streams, namespaces, and tenants.
 
@@ -374,7 +375,7 @@ Purges all of the event data from all streams, namespaces, and tenants.
 
 
 ``Reset configuration information``
-----------------------------------
+-----------------------------------
 
 Resets all egress configuration back to the point where egress is no longer configured.
 
@@ -416,7 +417,7 @@ Resets all egress configuration back to the point where egress is no longer conf
 ***********************
 
 ``Retrieve server metrics information``
--------------------------------------
+---------------------------------------
 
 Retrieves metrics information about server data requests.
 
@@ -462,7 +463,7 @@ Egress
 
 
 ``List running egress targets``
------------------------------
+-------------------------------
 
 Returns a list of running or not running egress targets by target ID. The isRunning flag is used to indicate whether to 
 return egress targets that are either running or not running.
@@ -507,7 +508,7 @@ return egress targets that are either running or not running.
 
 
 ``List egress targets``
--------------------
+-----------------------
 
 Returns a list of all egress targets (both those that are running and those that are not running).
 
@@ -727,7 +728,7 @@ Retrieve
 
 
 ``Get a target``
--------------------
+----------------
 
 Retrieves an individual egress target.
 
@@ -774,7 +775,7 @@ Retrieves an individual egress target.
 
 
 ``Modify egress target``
---------------------------
+------------------------
 
 Modifies an egress target.
 
@@ -817,8 +818,8 @@ Modifies an egress target.
 
 
 
-``Create egress target ``
-----------------------
+``Create egress target``
+------------------------
 
 Create an egress target. 
 
@@ -862,7 +863,7 @@ Create an egress target.
 
 
 ``Delete target``
--------------------
+-----------------
 
 Deletes an egress target. 
 
@@ -906,7 +907,7 @@ Deletes an egress target.
 
 
 ``Enable debug dump``
--------------------
+---------------------
 
 Enables a dump of egress data to be written to disk, enabling you to determine exactly what was egressed from the product.
 This call is useful when you want to ensure the egress data was actually received by OCS.
@@ -953,7 +954,7 @@ This call is useful when you want to ensure the egress data was actually receive
 
 
 ``Add or update egress target``
--------------------
+-------------------------------
 
 Creates an egress target if one does not already exist, or, if the target exists, modifies the egress target. 
 
@@ -997,7 +998,7 @@ Creates an egress target if one does not already exist, or, if the target exists
 
 
 ``Start an egress target``
--------------------
+--------------------------
 
 Starts a specified egress target. 
 
@@ -1041,7 +1042,7 @@ Starts a specified egress target.
 
 
 ``Stop an egress target``
------------------------
+-------------------------
 
 Stops a specified egress target. 
 
@@ -1085,7 +1086,7 @@ Stops a specified egress target.
 
 
 ``Determine if egress target exists``
-------------------------------------
+-------------------------------------
 
 Returns a boolean indicating whether the specified target egress engine exists. 
 
@@ -1215,7 +1216,7 @@ Returns a list of rules that are defined for a specified egress target.
 
 
 ``Add rule``
--------------------
+-------------
 
 Adds a rule for a specified egress target.
 
@@ -1271,7 +1272,7 @@ Adds a rule for a specified egress target.
 
 
 ``Get individual rule``
--------------------
+-----------------------
 
 Returns an individual rule based on the rule ID. 
 
@@ -1314,7 +1315,7 @@ Returns an individual rule based on the rule ID.
 
 
 ``Update a rule``
--------------------
+------------------
 
 Updates an egress rule based on the specified rule ID. 
 
@@ -1357,7 +1358,7 @@ Updates an egress rule based on the specified rule ID.
 
 
 ``Delete a rule``
--------------------
+-----------------
 
 Deletes the egress rule specified by the rule ID.
 
@@ -1404,7 +1405,7 @@ Ingress
 
 
 ``Ingress data``
--------------------
+-----------------
 
 Ingress data from an OMF message to a specified tenent ID and namespace.
 
@@ -1491,7 +1492,7 @@ tenant and namespace.
 
 
 ``Set egress debug flag``
-------------------------
+-------------------------
 
 Sets the state of the egress debug flag. 
 
@@ -1539,7 +1540,7 @@ Registration
 
 
 ``Get registration data``
--------------------
+-------------------------
 
 Returns registration data. 
 
@@ -1582,7 +1583,7 @@ Returns registration data.
 
 
 ``Set registration information``
-------------------------------
+-------------------------------
 
 Writes registration data. 
 
