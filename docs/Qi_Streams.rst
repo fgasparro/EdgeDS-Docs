@@ -75,7 +75,7 @@ compound secondary indexes. Only SdsTypeCodes
 that can be ordered are supported for use in a secondary index.
 
 
-Indexes are discussed in greater detail here: :ref:`Qi_Indexes_topic`
+Indexes are discussed in greater detail here: :doc:`Qi_Indexes_topic`
 
 
 Interpolation and Extrapolation
