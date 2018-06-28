@@ -51,7 +51,7 @@ The following table shows the required and optional SdsView fields. Fields that 
 
 
 Properties / SdsViewProperty
----------------------------
+----------------------------
 
 The SdsView Properties collection provides detailed instructions for specifying the mapping of 
 event properties. Each SdsViewProperty in the Properties collection defines the mapping of an 
@@ -99,7 +99,7 @@ so required and optional have no meaning.
 +---------------------------+--------------------------+--------------+--------------------------------------------------+
 
 Properties / SdsViewMapProperty
-------------------------------
+-------------------------------
 
 The SdsViewMapProperty is similar a SdsViewProperty but adds a Mode detailing one or more actions taken on 
 the Property.
@@ -161,7 +161,7 @@ To update a Stream Type, define an SdsView and PUT the view to the following:
 For details, see `SdsView API`_. 
 
 Working with SdsViews when using .NET
-------------------------------------
+-------------------------------------
 
 **Using .Net**
 
@@ -462,7 +462,7 @@ To map when Sds cannot determine mapping, use SdsView Properties.
 
 
 Working with SdsViews when not using .NET
-----------------------------------------
+-----------------------------------------
 
 When working with Views and not using .NET, either invoke HTTP directly or use some of 
 the sample code. Both Python and JavaScript samples have SdsView definitions.
@@ -593,7 +593,7 @@ Returns the view corresponding to the specified viewId within a given namespace.
 ***********************
 
 ``Get View Map``
---------------
+----------------
 
 Returns the view map corresponding to the specified viewId within a given namespace.
 
@@ -722,7 +722,7 @@ Returns a list of views within a given namespace.
 ***********************
 
 ``Get or Create View``
---------------
+----------------------
 
 If a view with a matching identifier already exists, the view passed in is compared with the existing view.
 If the views are identical, the view is returned. If the views are different, the Found (302) error is returned.
@@ -772,7 +772,7 @@ The request content is the serialized SdsView. If you are not using the Sds clie
 ***********************
 
 ``Create or Update View``
---------------
+-------------------------
 
 Creates or updates the definition of a view. 
 
@@ -819,7 +819,7 @@ Creates or updates the definition of a view.
 ***********************
 
 ``Delete View``
---------------
+---------------
 
 Deletes a view from the specified tenant and namespace.
 
