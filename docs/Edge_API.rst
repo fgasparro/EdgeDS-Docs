@@ -148,7 +148,7 @@ Returns the current configuration of the Edge data store.
 
 
 ``Configure stream limits``
---------------------------
+---------------------------
 
 Configure the stream target size and maximum size. 
 The target size represents the size of most streams you expect to send to the server. The limit size represents 
@@ -170,10 +170,13 @@ approaches 5 MB in size, the server truncates stream data (from the front of the
 ``string Producer token``
   Your producer token 
 
-{
-  "streamStorageLimitMb": 0,
-  "streamStorageTargetMb": 0
-}
+::
+
+  {
+    "streamStorageLimitMb": 0,
+    "streamStorageTargetMb": 0
+  }
+  
 
 **Response**
 
@@ -549,7 +552,7 @@ Returns a list of all egress targets (both those that are running and those that
 
 ***********************
 
-Check with manas about whether to include the next 4
+Check with Manas about whether to include the next 4
 
 ``Get ``
 -------------------
