@@ -1,4 +1,4 @@
-.. _Edge_Install_topic:
+.. _Edge_Docker_Install_topic:
 
 How to Pull the Edge Data Server Docker Image
 =============================================
