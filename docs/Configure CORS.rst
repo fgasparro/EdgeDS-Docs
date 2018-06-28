@@ -26,26 +26,30 @@ The relevant entry to add/modify is the "AllowedOrigins" property's value, which
 
 Below is an example of a configuration that will allow the browser to process Edge Data Store requests from scripts originating from another local server (that has two different protcols on two different ports.) Note the value is an array of strings.
 
-{
-   "CORSConfig":{
-   		"AllowedOrigins":[
-   			"http://localhost:1880",
-   			"https://localhost:4000"
-   		]
-   },
+::
+
+  {
+     "CORSConfig":{
+        "AllowedOrigins":[
+            "http://localhost:1880",
+            "https://localhost:4000"
+         ]
+  },
    "ClientCertificateValidationConfig":{
       "Thumbprint":null
-   },
-   "DataServerStartupArguments":{
-      "ListenerPort":"5000",
-      "LocalStorageLocation":"C:\\ProgramData\\OSIsoft\\Data.Edge"
-   },
-   "OmfEgressEngineParameters":{
+  },
+  "DataServerStartupArguments":{
+     "ListenerPort":"5000",
+     "LocalStorageLocation":"C:\\ProgramData\\OSIsoft\\Data.Edge"
+  },
+  "OmfEgressEngineParameters":{
 
-   },
-   "ServerCertificateFile":null,
-   "LocalStoreConfiguration":{
-      "StreamStorageLimitMb":-1,
-      "StreamStorageTargetMb":-1
-   }
-}
+  },
+  "ServerCertificateFile":null,
+  "LocalStoreConfiguration":{
+     "StreamStorageLimitMb":-1,
+     "StreamStorageTargetMb":-1
+     }
+  }
+  
+  
