@@ -4,7 +4,7 @@ Docker certificate considerations
 Creating a new Docker image with an HTTPS server certificate
 ------------------------------------------------------------
 
-By default, the docker image distributee with the Edge Data Store contains a test https server certificate 
+By default, the docker image distributed with the Edge Data Store contains a test https server certificate 
 with only localhost and the localhost IP addresses as *Subject Alternative Names* (SAN). As described in the 
 certificate and installation documentation, in order to connect to Edge Data Store from a remote machine, 
 it is necessary to replace this certificate with one that has the server’s hostname or IP address in either 
