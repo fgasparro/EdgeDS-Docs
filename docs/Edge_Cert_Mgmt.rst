@@ -54,7 +54,7 @@ of that certificate file (.pfx). At this time, we do not support server certific
 a password to read.
 
 Using the Edge Historian With Certificates
-----------------------------------------
+------------------------------------------
 
 When the Edge Historian starts up, it looks for a --servercert <file> option on the command line. If
 that option exists, the file specified (which should be a .pfx file with no password) is loaded and
