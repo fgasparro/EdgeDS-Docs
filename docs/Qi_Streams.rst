@@ -75,7 +75,7 @@ compound secondary indexes. Only SdsTypeCodes
 that can be ordered are supported for use in a secondary index.
 
 
-Indexes are discussed in greater detail here: :doc:`Qi_Indexes_topic`
+Indexes are discussed in greater detail here: :ref:`Indexes_topic`.
 
 
 Interpolation and Extrapolation
@@ -105,11 +105,11 @@ The ``SdsStreamPropertyOverride`` object has the following structure:
 
 
 The unit of measure can be overridden for any type property defined by the stream type, including primary keys 
-and secondary indexes. For more information about type property units of measure see :ref:`QiType_topic`. 
+and secondary indexes. For more information about type property units of measure see :ref:`Qi_Types_topic`. 
 
 Read characteristics of the stream are determined by the type and the PropertyOverrides of the stream. The 
 interpolation mode for non-index properties can be defined and overridden at the stream level. For more 
-information about type read characteristics see :ref:`QiType_topic`.
+information about type read characteristics see :ref:`Qi_Types_topic`.
 
 When specifying property interpolation overrides, if the SdsType InterpolationMode is ``Discrete``, it cannot be overridden 
 at any level. When InterpolationMode is set to ``Discrete`` and an event it not defined for that index, a null 
@@ -117,7 +117,7 @@ value is returned for the entire event.
 
 
 SdsStream API
-------------
+-------------
 
 
 The REST APIs provide programmatic access to read and write SDS data. The APIs in this 
@@ -190,14 +190,14 @@ Returns the specified stream.
 ***********************
 
 ``Get Streams``
---------------
+---------------
 
 Returns a list of streams.
 
 If the optional search parameter is specified, the list of streams returned are filtered to match 
 the search criteria. If the optional search parameter is not specified, the list includes all streams 
-in the Namespace. See :ref:`Qi_Searching_topic` 
-for information about specifying the search parameter.
+in the Namespace. 
+
 
 **Request**
 
@@ -390,7 +390,7 @@ in the request body, a Conflict error response is returned and the client librar
 ***********************
 
 ``Create or Update Stream``
--------------------------
+---------------------------
 
 Creates the specified stream. If a stream with the same Id already exists, the definition of the stream is updated. 
 The following changes are permitted:
@@ -441,7 +441,7 @@ The request content is the serialized SdsStream.
 ***********************
 
 ``Update Stream Type``
---------------
+----------------------
 
 Updates a stream’s type. The type is modified to match the specified view. 
 Defined Indexes and PropertyOverrides are removed when updating a stream type.
@@ -493,7 +493,7 @@ The request contains no content.
 ***********************
 
 ``Delete Stream``
---------------
+-----------------
 
 Deletes a stream. 
 
