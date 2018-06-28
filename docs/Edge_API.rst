@@ -688,6 +688,7 @@ Retrieve
 ``Get ``
 -------------------
 
+
 Retrieve 
 
 
@@ -1176,7 +1177,7 @@ Returns the rate at which data is egressing from the data store.
 
 
 ``Get egress rules``
--------------------
+--------------------
 
 Returns a list of rules that are defined for a specified egress target.
 
@@ -1586,7 +1587,7 @@ Returns registration data.
 
 
 ``Set registration information``
--------------------------------
+--------------------------------
 
 Writes registration data. 
 
@@ -1637,7 +1638,6 @@ Writes registration data.
   Allowed for administrator and user accounts
 
 
-***********************
 
 
 
