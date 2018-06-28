@@ -50,7 +50,7 @@ expression:
 
 
 Logical operators
-------------
+-----------------
 
 **Supported**
 
@@ -99,7 +99,7 @@ For the following examples, assume that the Qi Type event includes a field named
 - ``not (Value eq 1.0)``
 
 Math functions
-------------
+--------------
 
 **Supported**
 
@@ -156,7 +156,7 @@ For the following examples, assume that the Qi Type event includes a field named
 
 
 String functions
-------------
+----------------
 
 **Supported**
 
@@ -223,7 +223,7 @@ The following examples assume that the Qi Type event includes a field named
 +---------------------------------------------+-----------------------------------------------------------------+
 
 DateTime functions
-------------
+------------------
 
 **Supported**
 
@@ -259,7 +259,7 @@ The following examples assume that the Qi Type event includes a field named
 -  ``second(TimeId) eq 3``
 
 TimeSpan functions
-------------
+------------------
 
 **Supported**
 
