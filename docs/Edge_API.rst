@@ -7,7 +7,7 @@ The Edge Data Store REST APIs provide programmatic access for data ingress or eg
 ***********************
 
 ``Change password``
------------------
+-------------------
 
 Change the password you use for the Edge data server. 
 
