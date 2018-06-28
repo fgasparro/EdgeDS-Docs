@@ -90,7 +90,7 @@ setting the authentication token in the header is shown below:
 			await httpClient.PostAsync (...) ...;
 		}
 	}
-```
+  ```
 
 In some cases, you might be using classes in libraries that encapsulate the underlying web service calls, such as
 ``OSIsoft.Data.Http.QiHttpClientFactory`` or ``OSIsoft.Data.Http.QiService``. In these cases, the classes provide 
@@ -135,7 +135,7 @@ instance to the overloaded method's ``DelegatingHandler`` argument, as shown bel
            // etc
         }
     }
-```
+  ```
 
 
 With the derived DelegatingHandler, every API call made by the library will have the token as part of the request headers.
