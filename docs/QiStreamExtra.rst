@@ -9,7 +9,7 @@ SdsStream Metadata API
 ---------------------
 
 ``Get stream metadata``
-----------------------
+-----------------------
 
 Returns the metadata dictionary for the specified stream. 
 
@@ -67,7 +67,7 @@ Returns the metadata dictionary for the specified stream.
 
 
 ``Get stream metadata value``
-----------------------
+-----------------------------
 
 Returns the value for the specified key in the metadata dictionary of the specified stream. 
 
@@ -126,7 +126,7 @@ Returns the value for the specified key in the metadata dictionary of the specif
 ***********************
 
 ``Update stream metadata``
-------------------------
+--------------------------
 
 Replaces the metadata for the specified stream with the metadata in the request body. 
 Overwrites any existing metadata; does not merge. 
@@ -171,7 +171,7 @@ Overwrites any existing metadata; does not merge.
 
 
 ``Delete stream metadata``
-------------------------
+--------------------------
 
 Deletes the metadata for the specified stream.  
 
@@ -217,7 +217,7 @@ SdsStream Tags API
 
 
 ``Get stream tags``
-----------------------
+--------------------
 
 Returns the tag list for the specified stream. 
 
@@ -274,7 +274,7 @@ Returns the tag list for the specified stream.
 ***********************
 
 ``Update stream tags``
----------------------
+----------------------
 
 Replaces the tag list for the specified stream with the tags listed in the request body.  
 Overwrites any existing tags; does not merge. 
@@ -319,7 +319,7 @@ Overwrites any existing tags; does not merge.
 
 
 ``Delete stream metadata``
-------------------------
+--------------------------
 
 Deletes the tag list for the specified stream. 
 
