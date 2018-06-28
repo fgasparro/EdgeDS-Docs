@@ -281,11 +281,14 @@ browser and your operating environment.
    The ``Select Certificate Store`` window displays.
 6. From the list, select ``Trusted Root Certificate Authority`` then click ``OK``.
 
-   By placing the self-signed certificate in the Trusted Root Certificate Authority location, it will be trusted by the operating system. 
+   By placing the self-signed certificate in the Trusted Root Certificate Authority location, 
+   it will be trusted by the operating system. 
    Leave ``Show Physical Store`` unchecked.
+   
 7. Click ``Next`` then click ``Finish``.
 
    A window displays indicating the import was successful. Click ``OK``.
+   
 8. Close and then restart your browser (if necessary) for the changes to take effect.
 
 
