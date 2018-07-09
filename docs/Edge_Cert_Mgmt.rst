@@ -78,11 +78,12 @@ application was built.
    we'd like newly built packages to have a full two years before expiration, rather than two years from the
    date the single placeholder certificate was issued.
 
-   In both cases above, the CA certificate needs to be trusted by any client application wanting to
-   communicate with the historian. To do that, the user of the client application needs to take our ca.cert.crt
-   or ca.cert.pem (not the .pfx or the .key.pem) file and add it to the trusted root certificate authorities store.
-   This file is located in source control at $/OSIsoft.Data.Edge.Server/Certificates/ca.cert.crt.
-
+   In both cases above, the CA certificate must be trusted by any client application that
+   communicates with the Edge Data Historian. To establish this trust, the user of the client application 
+   must add the OSIsoft-generated security certificate (ca.cert.crt or ca.cert.pem - not the .pfx or the .key.pem) 
+   to the trusted root certificate authorities store.
+   Because the file contains a root security certificate, contact OSIsoft to obtain a copy.
+   
    Additionally, in both cases above, because we have no knowledge of a user's network topology or machine
    naming conventions, we have no way of adding the historian's hostname to the certificate. Therefore,
    only local client applications will properly validate the server certificate. In order to use a remote
