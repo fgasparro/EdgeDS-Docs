@@ -114,8 +114,3 @@ The parameters on ths page show basic Edge Data Store API functions. The adminis
 which helps developers understand what API endpoints are available and what the required parameters are. 
 
 
-.. toctree::
-
-        ../../OMF-Developer-Companion-Guide/docs/OMF_Type_msg
-        /osisoft/docs/Qi_Streams
-
