@@ -218,8 +218,6 @@ You can edit the settings file and restart Edge Data Store or use the command li
 Edge Certificates
 -----------------
 
-blah
-
 In order for the default Edge data store installation to work correctly with your browser or client application, 
 you must have two security certificates installed: 
 
