@@ -1,3 +1,5 @@
+.. _Edge_security_topic:
+
 ***************
 Security  
 ***************
