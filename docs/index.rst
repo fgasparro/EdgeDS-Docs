@@ -18,7 +18,7 @@ using Edge Data Store.
 
    Introducing_Edge
    EdgeDS_Installation
-   Quick_Start
+   EdgeDS_Quick
    EdgeDS_Admin
    Edge_Egress
    Qi_Types
