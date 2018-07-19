@@ -101,7 +101,7 @@ Edge performance tuning
 -----------------------
 
 To improve performance, the Edge Data Server writes recent configuration and event data to an in-memory cache
-and writes the changes to permanent  storage only when required. 
+and writes the changes to permanent storage only when required. 
 
 The Edge Data Server periodically runs a check-point routine that writes all recent configuration 
 and event data updates to permanent storage. By default, the checkpoint is performed every 30 seconds.  
@@ -126,6 +126,22 @@ Perform the following steps to adjust the periodic checkpoint rate:
 3. Modify the original value (30 in this example), to the number of seconds you wish the periodic checkpoint to occur.
 
 4. Restart the Edge Data Server.
+
+
+Enable or disable Edge data logging
+-----------------------------------
+
+You can enable or disable transaction logging by setting a parameter in the settings file (see `Edge performance tuning`_ for a
+description of the settings file). To enable transaction logging, insert the following line in your settings file:
+
+::
+
+  {
+    "EnableTransactionLog": 1,
+  }
+
+Set the parameter to ``0`` to disable logging.
+
 
 
 Starting the Edge Data Store
