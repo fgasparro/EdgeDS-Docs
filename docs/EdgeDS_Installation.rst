@@ -142,6 +142,15 @@ description of the settings file). To enable transaction logging, insert the fol
 
 Set the parameter to ``0`` to disable logging.
 
+To enable transaction logging and set the checkpoint rate at the same time, insert the following into your settings file:
+
+::
+
+  {
+    “EnableTransactionlog”: 1,
+    “CheckpointRateInSec": 30,
+  }
+
 
 
 Starting the Edge Data Store
