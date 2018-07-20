@@ -7,7 +7,7 @@ ensure the Edge software is installed and working correctly on your edge device.
 You should complete the installation steps (:ref:`Edge_Install_topic`) before attempting to complete the steps in this topic.
 
 1. Import the root certificate
-   For information about how to install the root certificate, see: :ref:`Edge_Install_topic <Edge Certificates>`.
+   For information about how to install the root certificate, see: :ref:`Edge_Install_topic <CertificateObj>`.
 
 2. On the computer on which Edge Data Store is installed, open a browser and enter the following URL:
 
