@@ -22,7 +22,6 @@ using Edge Data Store.
    EdgeDS_Admin
    Edge_Egress
    Quick_Start
-   Edge_API
    Qi_Types
    Qi_Streams
    QiView_information
