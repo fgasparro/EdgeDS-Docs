@@ -29,8 +29,8 @@ Stop Data Server
 Data Server Parameters
   You can change the Port address and the location of data storage. The default Port 5000; however, any available 
   port can be selected. In the *Storage Location* section, select any available storage location.
-  Changing these settings requires stopping and restarting the Edge data server. See xxx for information.
-  (This is a limitation of the CTP version.) 
+  Changing these settings requires stopping and restarting the Edge data server. See :ref:'Edge_Install_topic:' for information.
+  
 
 Data Server Store
   The data server has two configurable settings:
