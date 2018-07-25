@@ -944,7 +944,7 @@ The SdsTypeBuilder also supports derived types. Note that you need not add the b
 the Data Store before using SdsTypeBuilder. Base types are maintained within the SdsType.
 
 Working with SdsTypes when not using .NET
-----------------------------------------
+-----------------------------------------
 
 
 SdsTypes must be built manually when .NET SdsTypeBuilder is unavailable. The following discussion 
@@ -1305,7 +1305,7 @@ Extend the SdsType as follows:
   
   
 SdsType API
-----------
+-----------
 
 
 The REST APIs provide programmatic access to read and write Sds data. The APIs in this section 
@@ -1427,7 +1427,7 @@ The response includes a status code and a response body.
 ***********************
 
 ``Get Types``
-------------
+-------------
 
 Returns a list of types within a given namespace.
 
@@ -1536,7 +1536,7 @@ Returns a list of types within a given namespace.
 ***********************
 
 ``Create Type``
--------------
+---------------
 
 Creates the specified type. If a type with a matching identifier already exists, The Data Store compares the 
 existing type with the type that was sent. If the types are identical, a ``Found`` (302) error 
@@ -1778,7 +1778,7 @@ Response body
 
 
 ``Create or Update Type``
-------------------------
+-------------------------
 
 Creates the specified type. If a type with the same Id already exists, the definition of the type is updated.
 
@@ -1829,7 +1829,7 @@ they are defined.
 
 
 ``Delete Type``
-------------
+---------------
 
 Deletes a type from the specified tenant and namespace. Note that a type cannot be deleted if any streams or views reference it.
 
