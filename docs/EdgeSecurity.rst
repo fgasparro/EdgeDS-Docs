@@ -31,12 +31,14 @@ Currently, the interactive Edge administration site (which contains the *Home*, 
 protected. You are prompted to provide a username and password the first time you access a page in a session. The Edge 
 administration site is generally found at: ``https://localhost:5000/``
 
-The username and password for the site are fixed; they currently cannot be changed or removed. The username and password are:
+Initially, the username and password for the site are fixed. The username and password are:
 
 * username: ``edgeadmin``
 * password: <to be provided> 
 
 Note that the password is case sensitive.
+
+You can change the default password using the Edge Administration user interface; see the ``Security`` screen.
 
 After you are logged in, you will not be prompted for credentials again unless your session ends. The session ends after 
 15 minutes of inactivity or if you exit the browser.
