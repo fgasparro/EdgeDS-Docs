@@ -62,7 +62,8 @@ To create an SdsType in .NET, use the .NET SDS libraries SdsTypeBuilder.
          simpleType.Description = "Basic sample type";
   await config.CreateTypeAsync(simpleType);
 
-When working outside of .NET, SDS libraries are unavailable. The SdsType is defined using JSON and is posted to the OSIsoft Cloud Services endpoint.
+When working outside of .NET, SDS libraries are unavailable. The SdsType is defined using JSON and is posted to the Edge Data
+Store endpoint.
 
 ::
 
@@ -203,7 +204,7 @@ Create an SdsStream of Simple events using the .NET SDS libraries as follows:
 
   simpleStream = config.CreateStreamAsync(simpleStream);
 
-To create the stream without the libraries, post a JSON representation of the SdsStream to OSIsoft Cloud Services.
+To create the stream without the libraries, post a JSON representation of the SdsStream to Edge Data Store.
 
 ::
 
@@ -243,7 +244,7 @@ To insert an event using the .NET SDS libraries:
 
   await client.InsertValueAsync(simpleStream.Id, value);
 
-To POST a JSON serialized event to the OSIsoft Cloud Services:
+To POST a JSON serialized event to Edge Data Store:
 
 ::
 
@@ -310,7 +311,7 @@ Temporary service interruptions are a fact of life in real-world cloud applicati
 If you access SDs using the SDS .NET libraries, transient fault handling is built in; 
 the SDS client automatically retries error codes identified as transient.
 
-If you access the SDS API directly from the OSIsoft Cloud Services endpoint, you should 
+If you access the SDS API directly from the Edge Data Store endpoint, you should 
 consider creating your own retry logic to automatically retry when encountering errors 
 identified as transient.
 
