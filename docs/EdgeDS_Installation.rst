@@ -278,7 +278,7 @@ for managing digital certificates. You should use the digital certificates recom
 The instructions on this page show how to install the OSIsoft root certificate into a trusted location, which in 
 turn allows the machine certificate to be validated by a browser or a client application. The default machine 
 certificate (provided for testing) is already installed - note that using your own machine certificate is 
-possible, and highly recommended for production work. See xxx for details.
+possible, and highly recommended for production work. See :ref:`Edge_security_topic:` for details.
 
 Note: Some browsers and applications (such as Mozilla Firefox or Node Red), do not use the certificate store provided 
 by the operating system; instead, they use their own. You should search for documentation that is applicable to your 
@@ -335,10 +335,12 @@ browser and your operating environment.
 Certificates for browser support
 --------------------------------
 
+Depending on the particular web browser you use, it might or might not use the Edge Data Store security certificate.
+If your browser reports that the Edge data store site (https://localhost:5000) is not secure, try following 
+the instructions in this section to supply a security certificate for your browser. 
 
-If your browser reports that the Edge data store site (https://localhost:5000) is not secure, you should follow 
-the instructions in this section to supply a security certificate for your browser. The instructions here are specific
-to Chrome browsers; however, the procedure should be similar for most browsers.
+The instructions here are specific
+to Chrome browsers; however, the procedure should be similar for most other browsers.
 
 1. With the Chrome browser open, click the Menu button (located next to the website address bar) then click ``Settings``.
    The Settings section opens in a new tab.
