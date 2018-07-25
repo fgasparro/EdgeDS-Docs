@@ -320,7 +320,7 @@ An immediate first retry is recommended, followed by an exponential backoff.
 
 
 SDS client error
----------------
+----------------
 
 If you access SDS using the .NET libraries, be aware that any non-success responses returned 
 to the client are packaged in an SdsHttpClientException, which is an Exception with the following 
