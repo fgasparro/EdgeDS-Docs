@@ -368,7 +368,7 @@ and the measurement to 500, set the index to ``state,measurement``.
 ***********************
 
 ``Replace value``
-----------------
+-----------------
 
 Replaces an existing event with an event with matching primary index. If there is not an event with a 
 matching index, the replace operation fails and returns HTTP status code Not Found, 404.
@@ -533,7 +533,7 @@ the remove operation fails and returns HTTP status code Not Found, 404.
 ***********************
 
 ``Insert values``
-----------------
+-----------------
 
 Inserts a collection of events into the specified stream. If an event exists at the same primary 
 index as any of the values, the insert operation fails and returns HTTP status code Conflict, 409.
@@ -697,7 +697,7 @@ A sample of serialized Simple type content is shown here:
 
 
 ``Replace values``
-----------------
+------------------
 
 Replaces a collection of events with events that match primary indexes. If there is not an event with a 
 matching index, the replace operation fails and returns HTTP status code Not Found, 404.
@@ -747,7 +747,7 @@ using the Sds client libraries, using JSON is recommended.
 
 
 ``Update values``
-----------------
+-----------------
 
 Replaces a collection of events with events that contain matching primary indexes. If there is not a collectin of events with a 
 matching index, the events are inserted.
@@ -795,7 +795,7 @@ using the Sds client libraries, using JSON is recommended.
 
 
 ``Remove values``
-----------------
+-----------------
 
 Removes events at matching primary indexes. If there is not an event with a matching index, 
 the remove operation fails and returns HTTP status code Not Found, 404.
@@ -857,7 +857,7 @@ should resebble the following:
 
 
 ``Remove window values``
-----------------------
+------------------------
 
 Removes events that fall within a window defined by start and end primary indexes. Events that fall 
 at the start or end index are also deleted. 
@@ -907,7 +907,7 @@ at the start or end index are also deleted.
   Allowed for administrator accounts.
 
 
-***********************
+
 
 
 
