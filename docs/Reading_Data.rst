@@ -128,7 +128,7 @@ Table formats are covered in detail in the :ref:`Qi_Table_format_topic` section.
 
 
 SdsBoundaryType
---------------
+---------------
 
 SdsBoundaryType defines how data on the boundary of queries is handled: around the start index for range value queries, 
 and around the start and end index for window values. The following are valid values for SdsBoundaryType:
