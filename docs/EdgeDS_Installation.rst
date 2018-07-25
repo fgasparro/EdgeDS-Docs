@@ -358,7 +358,7 @@ to Chrome browsers; however, the procedure should be similar for most other brow
        
     b. Click ``Next``.
     
-    c. Click the ``Browse`` button, locate the certificate file, and click ``Open''.
+    c. Click the ``Browse`` button, locate the certificate file, and click ``Open``.
     
     d. Click Next.
     
