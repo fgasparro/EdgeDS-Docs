@@ -68,7 +68,7 @@ The response includes a status code and a response body.
 **********************
 
 ``Get Behaviors``
-----------------
+-----------------
 
 Returns a list of stream behaviors.
 
@@ -132,7 +132,7 @@ The response includes a status code and a response body.
 **********************
 
 ``Get Behavior Reference Count``
-------------------------------
+--------------------------------
 
 Returns the count of streams referencing the specified behavior. 
 
@@ -183,7 +183,7 @@ The response includes a status code and a response body.
 **********************
 
 ``Create Behavior``
-------------------
+-------------------
 
 Creates the specified stream behavior. If a stream behavior with a matching identifier already exists, Qi compares the 
 existing stream behavior with the stream behavior that was sent. If the stream behaviors are identical, a ``Found`` (302) error 
@@ -286,7 +286,7 @@ no extrapolation and an override of a Property.
 
 
 ``Create or Update Behavior``
----------------------------
+----------------------=------
 
 Creates the specified behavior. If a behavior with the same Id already exists, the definition 
 of the behavior is updated.
@@ -330,7 +330,7 @@ The response includes a status code.
 ********************
 
 ``Delete Behavior``
-----------------
+-------------------
 
 Deletes a stream behavior. You cannot delete a stream behavior that is associated with a stream.
 
