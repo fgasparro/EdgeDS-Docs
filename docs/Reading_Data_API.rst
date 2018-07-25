@@ -108,7 +108,7 @@ this request receives a response with an event interpolated at the specified ind
 ***********************
 
 ``Get First Value``
---------------
+-------------------
 
 Returns the first value in the stream. If no values exist in the stream, null is returned.
 
@@ -157,7 +157,7 @@ Returns the first value in the stream. If no values exist in the stream, null is
 ***********************
 
 ``Get Last Value``
---------------
+------------------
 
 Returns the last value in the stream. If no values exist in the stream, null is returned.
 
@@ -202,7 +202,7 @@ Returns the last value in the stream. If no values exist in the stream, null is 
 ***********************
 
 ``Get Distinct Value``
----------------------
+----------------------
 
 Returns the value at the specified index. If no value exists at the specified index, 
 Get Distinct Value returns HTTP Status Code Not Found, 404.  The stream’s read characteristics 
@@ -300,7 +300,7 @@ No distinct value is found at the specified index, and an error response is retu
 ***********************
 
 ``Find Distinct Value``
-----------------------
+-----------------------
 
 Returns a stored event found based on the specified QiSearchMode and index. 
 
@@ -678,7 +678,7 @@ Note that State is not included in the JSON as its value is the default value.
 ***********************
 
 ``Get Range Values``
---------------
+--------------------
 
 Returns a collection of values as determined by a start index and count. 
 
@@ -920,7 +920,7 @@ Adding a filter to the request means only events that meet the filter criteria a
 ***********************
 
 ``Get Window Values``
---------------------
+---------------------
 
 Get Window Values returns a collection of stored events based on specified start and end indexes. 
 For handling events at and near the boundaries of the window, a single QiBoundaryType that applies 
@@ -1280,7 +1280,7 @@ Note that State is not included in the JSON as its value is the default value.
 ***********************
 
 ``Get Intervals``
---------------
+-----------------
 
 Returns summary intervals between a specified start and end index. 
 
