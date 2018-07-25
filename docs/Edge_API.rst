@@ -553,8 +553,8 @@ Returns a list of all egress targets (both those that are running and those that
 ***********************
 
 
-``Get ``
--------------------
+``Get buffer parameters``
+-------------------------
 
 Retrieve 
 
@@ -597,8 +597,8 @@ Retrieve
 
 
 
-``Get ``
--------------------
+``Get``
+-------
 
 
 Retrieve 
