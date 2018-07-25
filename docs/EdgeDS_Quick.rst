@@ -8,7 +8,7 @@ You should complete the installation steps (:ref:`Edge_Install_topic`) before at
 
 1. Import the root certificate.
 
-   For information about how to install the root certificate, see: :ref:`Edge cerfificates <CertificateObj>`.
+   For information about how to install the root certificate, see: :ref:`Edge certificates <CertificateObj>`.
 
 2. On the computer on which Edge Data Store is installed, open a browser and enter the following URL:
 
