@@ -27,21 +27,6 @@ simple or complex data types to suit
 your application needs. You can define simple or complex indexing to arrange and relate your data. An assortment 
 of methods with customizable behaviors are available to read data and easily obtain needed information.
 
-Samples
-------------
-
-The best way to get started with Edge Data Store is to run one or more of the code samples. Code samples are 
-provided in a number of different programming languages to illustrate how to easily and effectively 
-interact with Edge Data Store. The code samples are located in the Edge ``DS-Samples`` repository on GitHub. 
-
-Each sample includes a readme which describes the steps required to run the sample and a brief description 
-that highlights some of the sample’s functionality. Be sure to read the readme.rst file to understand 
-how the sample works.
-
-After you have finished this introduction and worked with one of the samples, refer to 
-the :ref:`Quick_start_topic` section, which describes the interaction of 
-various Edge Data Store objects and will help you get started creating your own applications.
-
 Architecture
 ------------
 
